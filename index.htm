@@ -1,0 +1,110 @@
+<html>
+<head>
+<title>Peter Fox's standard style sheet</title>
+  <link href="PefStdDoc.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<h1>My standard css stylesheet for technical documents</h1>
+<div class="boxOut shadow todo right w5">Latest version 5 September 2011</div>
+I write lots of technical documents and have evolved a css style sheet that
+gives me a standard look and feel and lots of convenient classes such as
+box-outs, various sorts of table, code display and so on.
+<table class="frame2">
+<tr valign=top>
+<td><span class=tick1>Firefox(5)</span>
+<span class=tick1>IE(8)<span class=emph>standards mode</span></span><br> 
+<span class=tick1>Chrome(12)</span>
+<span class=tick1>Safari(5.1)</span><br>
+<span class=tick1>Opera(11.5)</span>
+
+<td>Box-outs work well on the screen<br>
+    <span class="pin green">There are quick shortcuts for allocating horizontal space</span></td>
+<td>There's a cool image and caption class<br>
+  <span class="pin green">Also box frames</span></td>
+</tr><tr>  
+<td>Pages can be printed without breaking the layout or content.<br> 
+<span class=emph>(Except most browsers are abysmal at printing anyway so don't expect perfection.)</span></td>
+<td>There are a useful set of informal and formal table styles</td>
+<td>There is a cool way of displaying an email address that can't be scraped<br>
+    <span class="pin green">Try it below</span>
+    </td>
+</tr></table>
+
+<table><tr>
+<td>
+  <ul>
+  <li class="frame1 round2 bgwhi"><a class=newWin href="CheatSheet.htm" target="_blank">View the cheat sheet in HTML</a>
+      <span class="green">(New window.  Expect problems with IE unless in standards mode.)</span>
+  <li><a class=newWin href="CheatSheet.png" target="_blank">View the cheat sheet as an image</a>
+      <span class="green">(New window.  You may need to zoom.)</span>
+  <li><a href="style.zip" class="download" >Download the css, fonts, cursors and cheat sheet</a>
+      <span class="green">(409Kb)</span>
+  <li><a href="GetStarted.htm">Getting started tutorial and quick reference</a>
+  </ul>
+</td><td>
+<ul class="bgwhi shadow">
+<li>The idea is that you use this as the basis for your own standard style.
+<li>If you don't know how css works or don't write in HTML then this isn't for you.
+<li>If you come up with a brilliant improvement then let me know <span class=email>@</span>
+</ul>
+</td></tr></table>
+
+
+<h1>A cool and useful CSS trick</h1>
+<div class="img w4 right round2 m2">
+  This is a div with a class of img containing an ordinary  &lt;img&gt; which is scaled to the appropriate width. <img src="clubFoo.jpg"> 
+</div>
+<div class="img w6 right round1 m2">
+  <img src="clubFoo.jpg"> This is a div with a class of img containing an ordinary  &lt;img&gt; which is scaled to the appropriate width.
+</div>
+How do you get images and captions to resize together?  It is very simple.
+The HTML for all thes images here is exactly the same.
+
+<h3>Explanation</h3>
+<ul>
+<li>The secret to this trick is <b>display:table</b>
+<li>overflow:hidden helps with rounded corners if you apply them.
+<li>width:100% scales the image to fit the space in the div.
+<li>The padding and margins are a bit of trial and error
+</ul>
+
+
+<table class=clear><tr valign=top><td>
+<h3>CSS</h3>
+<div class=code>div.img {
+  display:table;    /* key setting */
+  color:white;
+  background-color:black;
+  font-weight:bold;
+  text-align:center;
+  overflow:hidden;
+  padding: 0px 5px 3px 5px;
+  border-radius:5px;   /* cosmetic */
+}  
+div.img&gt;img {
+  width:100%;         /* fills div */
+}
+</div>
+</td><td>
+<h3>HTML</h3>
+<div class=code>&lt;div class="img round2"&gt;
+  &lt;img src="clubFoo.jpg"&gt;
+  This is a div=img containing
+  an ordinary &lt;img&gt; which
+  is scaled to the appropriate
+  width.
+&lt;/div&gt;
+</div>
+</td><td>
+<h3>Result</h3>
+<div class="img round3">
+  <img src="clubFoo.jpg"> This is a div with a class of img containing an ordinary  &lt;img&gt; which is scaled to the appropriate width.
+</div>
+
+
+</td></tr>
+
+</table>
+
+</body>
+</html>

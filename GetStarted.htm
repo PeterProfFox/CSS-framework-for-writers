@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="PefStdDoc.css" rel="stylesheet" type="text/css">
+  <title>Getting started with Peter's css framework</title>
+</head>
+<body>
+<div class=topMenu>
+  <a class=link href="http://vulpeculox.net/misc/style">Framework home page</a>
+  <a class=link href="http://vulpeculox.net/misc/style/CheatSheet.htm">Cheat sheet (html)</a>
+</div>
+<div class=title1>Peter's standard css markup</div>
+<div class=title2>Getting started</div>
+
+<div><!-- contents and purpose -->
+  <div class="boxOut w3">
+    <b>Contents</b>
+    <ul class=bare>
+      <li><a href="#purpose">Purpose of this document</a></li>
+      <li class=m1><a href="#p-who">Who should use it</a></li>
+      <li class=m1><a href="#p-why">Benefits of a framework</a></li>
+      <li><a href="#resources">Resources</a></li>
+      <li><a href="#coding">Coding HTML</a></li>
+      <li class=m1><a href="#c-basics">Basics</a></li>
+      <li class=m1><a href="#c-boxes">The joy of box</a></li>
+      <li class=m1><a href="#c-tables">Tables for layout and presentation</a></li>
+      <li class=m1><a href="#c-lists">Lists for layout and action</a></li>
+      <li class=m1><a href="#c-images">Pictures made simple</a></li>
+      <li class=m1><a href="#c-misc">Miscellaneous features</a></li>
+      <li class=m1><a href="#c-cols">Newspaper columns</a></li>
+      <li><a href="#technicalities">Technicalities</a></li>
+      <li class=m1><a href="#t-printing">Printing</a></li>
+      <li class=m1><a href="#t-browsers">Browser differences</a></li>
+      <li><a href="#style">Authoring and style</a></li>
+      <li class=m1><a href="#s-different">HTML is different</a></li>
+      <li class=m1><a href="#s-developing">Developing your own</a></li>
+      <li class=m1><a href="#s-reader">Remember the reader</a></li>
+    </ul>
+  </div>
+  
+  <h3>Welcome</h3>
+  Welcome to Peter Fox's CSS framework for HTML authoring.
+  The background is that I've written many user guides and tutorials in HTML and ended up
+  re-inventing the wheel.  My style and the style you'll see here is quite different
+  to that produced by a word processor for presentation in PDF.  With HTML you can
+  use layout to make it much more punchy by using 'standard' formulas of 'look-at-this',
+  'here is a summary', 'here is a differently presented example in a frame' and so on.  
+  Perhaps most important of these is the <span class=emph>box-out</span> which conveys
+  nuggets of information and possible actions.
+  <p></p>
+  <h6 class="info w5 right"><u>Keen to learn?</u>Studying the CSS and the HTML here will be useful for people who 
+    know a little bit but haven't really got stuck-in</h6>
+  <span class=arrowW>An</span> obvious example of something that 
+  we often see on the screen but wouldn't on paper is the contents box to the left here.
+  <p></p>
+  Boxouts like this one are an easy to implement screen idiom making use of distinctive
+  styling to convey <span class="arrowE">purpose</span>
+  <p></p>                  
+  <span class=arrowNW>The</span> screen idiom of an always available master navigation is implemented in the
+    'menu bar' fixed to the top of the view independently of document scrolling.
+  <div class="boxOut left wall">Don't like some style or feature?  Change it and evolve your own look-and-feel
+  </div>
+  
+  <a name="purpose"></a><h1><u>1</u>Purpose of this document</h1>
+  <a name="p-who"></a><h2><u>1.1</u>Who should use it</h2>
+  <div class="boxOut right w5"><span class=tick0>This</span> is not suitable for creating cool,
+     flashy web sites.
+     <p></p>
+     <span class=tick1>If</span> you want richly formatted documentation that works across
+       most browsers that look a bit like this one then this is for you.
+     </div>
+  Writing in HTML is not for everybody.  Firstly of course you must have something to say and 
+  the ability to put it into logical blocks and words.  Then you need a basic knowledge of HTML
+  and CSS and an editor to hack at bare tags.  If you want to write documents such as
+  user guides, manuals and even just reports that take advantage of the features that
+  are available on a screen that you don't get with 'designed for paper' then read on.
+  <p></p>
+    Why not use the universal language of the screen to write for it?  Because it can be a tedious fiddly pain.
+    That's why I've put this together so when I need some formatting or feature I can quickly pick it
+    from the tool-kit.
+  <a name="p-why"></a><h2><u>1.2</u>Benefits of a framework</h2>
+  <table>
+    <tr>
+      <td class=w3>
+        A framework is just a lot of CSS rules and a bit of documentation.
+        Obviously it is useful to be able to style basic elements such as
+        <span class="tag code">H1</span> and anyone who has written user guides will
+        have developed bits of style such as <span class=code>DIV.alert{border:3 solid red;}</span> etc.
+        This gives <span class=emph>styling speed and consistency.</span>
+        <p></p>
+        What I've done here is tidy up my standard framework and documented it
+        so you can re-use what I re-use.
+        <p></p>
+        <b>Remember you can easily adapt it to suit your preferences.</b>
+      </td>
+      <td>
+        <table class="shadeR1">
+          <tr>
+            <td>User benefits</td>
+            <td>Author benfits</td>
+          </tr>
+          <tr>
+            <td>
+              <ul class=ticks>
+                <li class=t1>Consistent use of elements for ease of interpretation
+                <li class=t1>Easy formatting means better, easier to read layout
+                <li class=t1>Rich formatting can give direction and clarity
+              </ul>    
+            </td>
+            <td>
+              <ul class=ticks>
+                <li class=t1>All your documents have a standard look and feel
+                <li class=t1>Simplification of formatting and features
+                <li class=t1>Easy formatting means better layout, clearer documents
+                <li class=t1>Quick picking of complex styles
+                <li class=t1>Make your point quickly with ready to use features
+              </ul>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+  <div class="boxOut center wall">This document is deliberatly <span class=q>punchy</span> but you don't 
+    <i>have to</i> turn a perfectly straightforward report into a carnival.</div>
+</div><!-- contents and purpose -->
+
+<a name="resources"></a><h1><u>2</u>Resources</h1>
+<h6 class="fact w4 left">
+  <u>Framework</u>
+  The css framework and images to go with it are downloadable from the framework website
+  home page.<span class="arrowN">See</span> the link at the very top.  Download and unzip.</h6>
+<h6 class="fact w4 left">
+  <u>Reference</u>
+  The <span class=emph>cheat-sheet</span> is part of the download package.
+  An image of the cheat-sheet as it is rendered on my favourite browser is
+  <a class=newWin href="http://vulpeculox.net/misc/style/CheatSheet.png" target="_blank">here</a>
+  </h6>
+<h6 class="fact w4 left">
+  <u>Examples</u>
+  Look at the cheat sheet source, and the source of this document.
+  </h6>
+<h6 class="hint w75 down">
+  <u>Other resources</u>
+  <div class="m1 txl">
+  If you are relatively new to native HTML and CSS then you need tools for the job and 
+  some <i>basic</i> CSS and HTML reference materials.  The way elements gets laid-out 
+  in HTML can sometimes be mind-bogglingly confusing.
+  <ul class="ticks m2">
+  <li>A good general purpose text editor or possibly one specificaly for HTML and CSS. 
+  <li>Some book marks to HTML basics and CSS basics
+  </ul>
+  </div>
+  </h6>
+
+<!-- -----------------------------------------------------------------------------------
+                 .oooooo.                   .o8   o8o                         
+                d8P'  `Y8b                 "888   `"'                         
+               888           .ooooo.   .oooo888  oooo  ooo. .oo.    .oooooooo 
+               888          d88' `88b d88' `888  `888  `888P"Y88b  888' `88b  
+               888          888   888 888   888   888   888   888  888   888  
+               `88b    ooo  888   888 888   888   888   888   888  `88bod8P'  
+                `Y8bood8P'  `Y8bod8P' `Y8bod88P" o888o o888o o888o `8oooooo.  
+                                                                   d"     YD  
+                                                                   "Y88888P'  
+------------------------------------------------------------------------------------- -->
+  
+<a name="coding"></a><h1><u>3</u>Coding HTML</h1>
+Firstly have a look at the <span class=emph>cheat sheet</span> to get a feel for what can be done. 
+You'll see things like <span class=code>span=emph</span> or strange things like <b>w3</b>.  These 
+are clues to the key words you add to the HTML elements to make things happen.
+<a name="c-basics"></a><h2><u>3.1</u>Basics</h2>
+<h3><u>3.1.1</u>Reference the stylesheet</h3>
+  <h6 class="hint w3 right">
+    <u>Tip</u>
+    Put this line towards the top of the HEAD block as it means you will be able to tweak in-line
+    underneath to override the standard in special cases.</h6>
+  Somewhere in the <span class="code tag">HEAD</span> section you'll want to add something like
+  <span class="tag code">link href="PefStdDoc.css" rel="stylesheet" type="text/css"</span>.
+  You can of course change the name or add a path.  <span class=emph><span class="tick0">Do</span> not reference the 
+  version at <span class=path>vulpeculox.net</span> directly.</span>
+<h3><u>3.1.2</u>Adding classes to tags</h3>
+  <h6 class="info w3 right">
+    <u>Class matters</u>
+    Everything depends on adding one or more classes to HTML elements.<br>
+    <i>That's all there is to it</i><br>
+    <span class="red">Class/style names are case sensitive</span>    
+    </h6>
+  Suppose you want to put <b>I'd give it five stars</b> in quotes.  Here is all 
+  you do:<br><span class="m2 code">&lt;span <b>class=q</b>&gt;I'd give it five stars&lt;/span&gt;</span><br>
+  and this is the result<br>
+  <span class="m2 q">I'd give it five stars</span><br>
+<h3><u>3.1.3</u>Combining tags</h3>
+  <h6 class="hint w6 right">
+    <u>Quotes</u>
+    Single or double are both allowed</i>
+    </h6> 
+  <h6 class="hint w3 right">
+    <u>Quotes</u>
+    When tags are combined they must be surrounded in quotes.
+    <i>You can get away without quotes for a single class.</i>
+    </h6> 
+<ul class=bare>
+<li><span>Vulpeculox</span> Plain ...
+<li><span class="blue">Vulpeculox</span> <b>blue</b> added ...</td>
+<li><span class="blue bgblu">Vulpeculox</span> <b>bgblu</b> added ...</td>
+<li><span class="blue bgblu shadow">Vulpeculox</span> <b>shadow</b> added ...</td>
+<li><span class="blue bgblu shadow tick0">Vulpeculox</span> <b>tick0</b> added</td>
+</ul>
+Now you could have hours of fun playing with combinations... <span class=m1>...<span> <b>but don't!</b> 
+Let your jazzed-up formatting be driven by your needs.  The cheat sheet and to some extent
+this tutorial contain far too many fancy things for the average document.
+
+<h3><u>3.1.4</u>Start at the top</h3>
+<h6 class="info w3 right">
+    <u>Base font</u>
+    Normally, for consistent look-and-feel you would edit the CSS to set the default font.
+    Alternatively, for a once-off you could adapt the following to suit in a
+    <span class="tag code">STYLE</span> block.
+    <span class=code>body{font-family:Serif;}</span></h6>
+  The way I start my documents is as follows:
+<table>
+  <tr><td><span class="code tag">div class=topMenu</span></td>
+      <td>This is fixed to the top of the <i>viewing</i> screen and is used for <span class="tag code">A</span> links for navigating a library of documents.</td>
+  </tr>
+  <tr><td><span class="code tag">div class=title1</span></td>
+      <td>Global context</td>
+  </tr>
+  <tr><td><span class="code tag">div class=title2</span></td>
+      <td>Specific purpose of document</td>
+  </tr>
+</table>  
+After that anything can happen.
+
+<h3><u>3.1.5</u>Frequently used styles</h3>
+<table>
+<tr><td>
+<ul>
+<li>Of course <span class="tag code">H1</span>, <span class="tag code">H2</span> and <span class="tag code">H3</span> 
+ Note that <span class="tag code">H1</span> and <span class="tag code">H2</span> will force their way onto
+ a 'new line' but you may need to add <b>clear</b> to <span class="tag code">H3</span> if you've got floating bits before it. 
+ <div class="boxOut wall">
+    Start the heading text with something underlined to have it
+    appear as a section number in the left margin.</div>  
+<li><span class="tag code">div class=boxOut</span> with various combinations of <b>left</b>, <b>right</b>, <b>w4</b> and <b>w5</b>
+ is a really handy way to encapsulate a nugget.  It is just a <span class="tag code">DIV</span>
+ with fancy formatting. 
+    <div class="boxOut wall">The <b>w</b> styles are used all the time. 
+    Single digits are fractions, double digits percentages.
+    <b>wall</b> is variable up to 100% - often used to override the default 25% width of <b>boxOut</b></div>
+</ul>
+</td><td>
+<ul> 
+<li><span class="tag code">TABLE</span> without any class sets up a grid without lines.  This is handy
+  for when you want to split the width in a definite way.  It is often much easier to force the layout
+  that you want with a table rather than relying on floats.  <span class="tag code">TD class=w4</span> say
+  will try to restrict the width of a particular column to 25%.  It's not ideal but often works.
+<li> <span class="tag code">UL class=bare</span> is a convenient way to structure vertical space. 
+    Adding a <b>w</b>-class can be handy to stop it sprawling right across the page. 
+<li> <span class="tag code">UL class=ticks</span> is great for ticks, crosses and boxes.
+</ul>
+</td></tr></table>
+
+<a name="c-boxes"></a><h2><u>3.2</u>The joy of box</h2>
+Have a look at the H6 section of the cheat sheet.  There are two important points to notice
+<ol>
+<li>The complete styling is done in one go.  This means you can allocate certain boxes for
+    particular purposes.  In my world helpful hints and tips are <span class=emph>always</span> 
+    green.  This leads the way to quick, consistent formatting and faster comprehension by the
+    reader. You can of course tweak these styles and even add pictorial icons if you want
+    but always put directness of communication before cuteness of candy.
+<li>The layout is a not tabular.  In fact these boxes <span class="q">float</span>.  For example the 
+    black box has floated left until it bumps up agsinst the blue box.  As well as <b>left</b>
+    and <b>right</b> you can use <b>center</b> or <b>centre</b>.
+</ol>
+<h6 class=warn>
+  <u>Floating minefield</u>
+  Whilst you can do really useful things with <span class="tag code">div class=boxOut</span>
+  and <span class="tag code">H6</span> they upset the normal flow of the main content.
+  Sometimes it goes horribly wrong.  Tables are simpler if suitable.</h6>
+
+  <div class="frame2 round1 floatFix bgblu">
+    <h6 class="w5 fact left"><u>fact</u><span class="code">fact <b>w5 left</b></span><br>20% width. Float towards the left.  (Bumps up against left margin)</h6>
+    <h6 class="w5 info left m1"><u>info</u><span class="code">info <b>w5 left</b> m1</span><br>20% width. Float towards the left. Leave a 1em left margin. (Bumps up against <span class="name">fact</span>)</h6>
+    <h6 class="w4 hint left m1"><u>hint</u><span class="code">hint <b>w4 left</b> m1</span><br>25% width. Float towards the left. Leave a 1em left margin. (Bumps up against <span class="name">info</span>)</h6>
+    <h6 class="w4 warn left down" ><u>warn</u><span class="code">warn <b>w4 left <span class="invert">down</span></b></span><br>25% width. Float towards the left. (Bumps up against left margin). 
+    <b>Without the <span class="invert">down</span> the box would try to snuggle up with the row of boxes above.</b></h6>
+    <h6 class="w2 dont right m1 shadow"><u>dont</u><span class="code">dont <b>w2 right</b> m1 shadow</span><br>50% width. Float towards the right. Leave a 1em left margin. (Bumps up against right margin)</h6>
+  </div>
+  <div class="left w60 frame2 round1 floatFix bgblu">
+    <h6 class="w5 fact left"><u>fact</u><span class="code">fact <b>w5 left</b></span><br>20% width. Float towards the left.  (Bumps up against left margin)</h6>
+    <h6 class="w5 info left m1"><u>info</u><span class="code">info <b>w5 left</b> m1</span><br>20% width. Float towards the left. Leave a 1em left margin. (Bumps up against <span class="name">fact</span>)</h6>
+    <h6 class="w4 hint left m1"><u>hint</u><span class="code">hint <b>w4 left</b> m1</span><br>25% width. Float towards the left. Leave a 1em left margin. (Bumps up against <span class="name">info</span>)</h6>
+    <h6 class="w4 warn left down" ><u>warn</u><span class="code">warn <b>w4 left <span class="invert">down</span></b></span><br>25% width. Float towards the left. (Bumps up against left margin). 
+    <b>Without the <span class="invert">down</span> the box would try to snuggle up with the row of boxes above.</b></h6>
+    <h6 class="w2 dont right m1 shadow"><u>dont</u><span class="code">dont <b>w2 right</b> m1 shadow</span><br>50% width. Float towards the right. Leave a 1em left margin. (Bumps up against right margin)</h6>
+  </div>
+  <div class="left w3 shadow">
+    The source code for these examples is exactly the same.  The H6s just follow on one after another.
+    <div class="code">    
+&lt;h6 ... fact left&quot;&gt; ... &lt;/h6&gt;
+&lt;h6 ... info left&quot;&gt; ...&lt;/h6&gt;
+&lt;h6 ... hint left&quot;&gt; ... &lt;/h6&gt;
+&lt;h6 ... warn left down&quot;&gt; ... &lt;/h6&gt;
+&lt;h6 ... dont right&quot;&gt; ... &lt;/h6&gt;
+    </div>
+    
+    <div class="boxOut wall">Note that the grey frames are round DIVS.  These needed the <b>floatFix</b> style adding.
+    (The reason is that the floated elements, in this case all the boxes, have been taken out of the flow and
+    the browser doesn't count them as taking up vertical space.)
+    </div>
+  </div>
+  <h6 class="hint down center w75"><u>Get out of float trouble</u>You may find that a floating box interferes in an unpleasant way
+  with what comes next.  There are two things to try:<br>
+  1 Put a <span class="code tag">DIV class=floatFix</span>
+  around the offending box and its host section.<br>  
+  2 Add <b>left</b> and <b>down</b> to the following item.
+  </h6>
+  
+  
+<!-- TABLES --------------------------------------------------------------------- -->
+<a name="c-tables"></a><h2><u>3.3</u>Tables for layout and presentation</h2>
+<h3><u>3.3.1</u>Good reasons for splitting page into columns</h3>
+<h6 class="right info w4">
+      <u>Alternative method</u>
+      See section 3.7 <a href="#c-cols">Newspaper columns</a> for a less reliable
+      (uncertain browser support) but smoother way of flowing text between multiple
+      columns.
+</h6>      
+There are two different reasons for using tables.  Firstly to organise the layout and
+secondly to display tabular data.  If I had a long narrative report then I'd probably
+put it into two columns as shorter lines are easier to read.  The great advantage of
+tables for controlling layout over floats is that you force rows and columns to align
+regardless.  If you look at the source code of <span class="arrowNW">section 1.2</span>
+you'll see that this is a nest of two tables.  Lets see what it would look like without
+the outer table.  I think the narrower columns make it a lot easier to read.
+
+
+<div class="frame2 round1 bgwhi">
+        A framework is just a lot of CSS rules and a bit of documentation.
+        Obviously it is useful to be able to style basic elements such as
+        <span class="tag code">H1</span> and anyone who has written user guides will
+        have developed bits of style such as <span class=code>DIV.alert{border:3 solid red;}</span> etc.
+        This gives <span class=emph>styling speed and consistency.</span>
+        <p></p>
+        What I've done here is tidy up my standard framework and documented it
+        so you can re-use what I re-use.
+        <p></p>
+        <b>Remember you can easily adapt it to suit your preferences.</b>
+
+        <table class="shadeR1">
+          <tr>
+            <td>User benefits</td>
+            <td>Author benfits</td>
+          </tr>
+          <tr>
+            <td>
+              <ul class=ticks>
+                <li class=t1>Consistent use of elements for ease of interpretation
+                <li class=t1>Easy formatting means better, easier to read layout
+                <li class=t1>Rich formatting can give direction and clarity
+              </ul>    
+            </td>
+            <td>
+              <ul class=ticks>
+                <li class=t1>All your documents have a standard look and feel
+                <li class=t1>Simplification of formatting and features
+                <li class=t1>Easy formatting means better layout, clearer documents
+                <li class=t1>Quick picking of complex styles
+                <li class=t1>Make your point quickly with ready to use features
+              </ul>
+            </td>
+          </tr>
+        </table>
+</div>
+<table><tr><td>
+There are two different reasons for using tables.  Firstly to organise the layout and
+secondly to display tabular data.  If I had a long narrative report then I'd probably
+put it into two columns as shorter lines are easier to read.  The great advantage of
+tables for controlling layout over floats is that you force rows and columns to align
+regardless.  If you look at the source code of <span class="arrowNW">section 1.2</span>
+you'll see that this is a nest of two tables.  Lets see what it would look like without
+the outer table.  I think the narrower columns make it a lot easier to read.
+</td><td>
+There are two different reasons for using tables.  Firstly to organise the layout and
+secondly to display tabular data.  If I had a long narrative report then I'd probably
+put it into two columns as shorter lines are easier to read.  The great advantage of
+tables for controlling layout over floats is that you force rows and columns to align
+regardless.  If you look at the source code of <span class="arrowNW">section 1.2</span>
+you'll see that this is a nest of two tables.  Lets see what it would look like without
+the outer table.  I think the narrower columns make it a lot easier to read.
+</td></tr></table>
+
+<table><tr><td>
+There are two different reasons for using tables.  Firstly to organise the layout and
+secondly to display tabular data.  If I had a long narrative report then I'd probably
+put it into two columns as shorter lines are easier to read.  The great advantage of
+tables for controlling layout over floats is that you force rows and columns to align
+regardless.  If you look at the source code of <span class="arrowNW">section 1.2</span>
+you'll see that this is a nest of two tables.  Lets see what it would look like without
+the outer table.  I think the narrower columns make it a lot easier to read.
+</td><td>
+There are two different reasons for using tables.  Firstly to organise the layout and
+secondly to display tabular data.  If I had a long narrative report then I'd probably
+put it into two columns as shorter lines are easier to read.  The great advantage of
+tables for controlling layout over floats is that you force rows and columns to align
+regardless.  If you look at the source code of <span class="arrowNW">section 1.2</span>
+you'll see that this is a nest of two tables.  Lets see what it would look like without
+the outer table.  I think the narrower columns make it a lot easier to read.
+</td><td>
+There are two different reasons for using tables.  Firstly to organise the layout and
+secondly to display tabular data.  If I had a long narrative report then I'd probably
+put it into two columns as shorter lines are easier to read.  The great advantage of
+tables for controlling layout over floats is that you force rows and columns to align
+regardless.  If you look at the source code of <span class="arrowNW">section 1.2</span>
+you'll see that this is a nest of two tables.  Lets see what it would look like without
+the outer table.  I think the narrower columns make it a lot easier to read.
+</td></tr></table>
+
+
+<table class="boxed"><tr><td class="w4">
+There are two different reasons for using tables.  Firstly to organise the layout and
+secondly to display tabular data.  If I had a long narrative report then I'd probably
+put it into two columns as shorter lines are easier to read.  The great advantage of
+tables for controlling layout over floats is that you force rows and columns to align
+</td><td>
+regardless.  If you look at the source code of <span class="arrowNW">section 1.2</span>
+you'll see that this is a nest of two tables.  Lets see what it would look like without
+the outer table.  I think the narrower columns make it a lot easier to read.
+</td><td>
+There are two different reasons for using tables.  Firstly to organise the layout and
+secondly to display tabular data.  If I had a long narrative report then I'd probably
+put it into two columns as shorter lines are easier to read.  The great advantage of
+tables for controlling layout over floats is that you force rows and columns to align
+</td><td>
+regardless.  If you look at the source code of <span class="arrowNW">section 1.2</span>
+you'll see that this is a nest of two tables.  Lets see what it would look like without
+the outer table.  I think the narrower columns make it a lot easier to read.
+</td></tr></table>
+<div class=floatFix>
+  <h6 class="warn w3 left"><u>No flow</u>Unfortunatly there is no <span class=emph>reliable</span>
+  automatic way to flow text between columns.  In practice I find this a bit of a bore but it helps to leave 
+  putting the text into columns until it has been pretty much finalised.  See section 3.7 for 
+  alternative method which <i>may</i> be suitable for your needs.</h6>
+  <h6 class="warn w2 right"><u>Column widths</u>Unfortunatly tables have a habit of deciding the
+  width of their columns themselves is based on the amount of text in them
+  and trying to get images to fit and looking at some unfortunate animal's entrails.
+  You can see the adjustment happening <span class="arrowN">above</span>. You can
+  <i>suggest</i> to the browser some widths by adding a <b>w4</b> etc. to
+  all the TDs of a row.  It works for me in this case.<span class="arrowS"> </span>  
+  </h6>
+</div>  
+<table class="left down boxed"><tr><td class="w4">
+There are two different reasons for using tables.  Firstly to organise the layout and
+secondly to display tabular data.  If I had a long narrative report then I'd probably
+put it into two columns as shorter lines are easier to read.  The great advantage of
+tables for controlling layout over floats is that you force rows and columns to align
+</td><td class="w4">
+regardless.  If you look at the source code of <span class="arrowNW">section 1.2</span>
+you'll see that this is a nest of two tables.  Lets see what it would look like without
+the outer table.  I think the narrower columns make it a lot easier to read.
+</td><td class="w4 full">
+There are two different reasons for using tables.  Firstly to organise the layout and
+secondly to display tabular data.  If I had a long narrative report then I'd probably
+put it into two columns as shorter lines are easier to read.  The great advantage of
+tables for controlling layout over floats is that you force rows and columns to align
+</td><td class="w4 full">
+regardless.  If you look at the source code of <span class="arrowNW">section 1.2</span>
+you'll see that this is a nest of two tables.  Lets see what it would look like without
+the outer table.  I think the narrower columns make it a lot easier to read.
+<div class="boxOut wall">These two columns have <b>full</b> added to the TD for
+fully justified text.</div>
+</td></tr></table>
+<p class="clear gap">
+<h3><u>3.3.2</u>Coding tables for layout</h3>
+<div class="boxOut w3 right">
+  <span class=emph>You need to know the basics of HTML tables.</span>
+  Simply a <span class="tag code">TABLE</span> contains a number of rows
+  (<span class="tag code">TR</span>) which in turn contain a number
+  of cells (<span class="tag code">TD</span>). <i>Always TDs inside TRs.</i>
+  Put whatever you like inside the TDs.
+</div>  
+The cheat sheet tells you all you need to know about informal tables used
+to organise layout.  There's nothing much to it really.  Don't forget you can
+easily make your table smaller by adding a width class to it.  Formatting
+styles applied to the TABLE often cascade down to every cell.
+ 
+
+<h3><u>3.3.3</u>Coding tables for tabular data display</h3>
+Once again the cheat sheet should tell you all you need to know.  The key thing is
+the <b>table</b> class.  That will get you started.
+<h6 class="w4 right warn"><u>Internet Explorer</u>Versions less than 9 can't format columns in one go.  You have to style each TD!</h6> 
+<p>
+Adding class <b>table</b> to <span class="tag code">TABLE</span> gives a bare white grid.
+The default alignment of text in cells is to the left but you can override this by specifying
+columns to justify right - typically for figures - with <b>c</b><i>-column number-</i><b>r</b>.
+For example <b>c4r</b> will right justify the fourth column.
+<p>
+Classes <b>total</b> and <b>none</b> can be added to the <span class="code tag">TR</span> tag.
+In the cheat sheet the comment at the bottom of the table is actually a blanked-out row.
+<p>
+It is often convenient to have the title of a table attached to it.  For this purpose
+the first row is commandeered for a table-wide heading using <b>titleR1</b>.  You 
+have to <span class="code">colspan=6</span> or however many columns there are.
+When using this feature you can stick headings on the second row with <b>shadeR2</b>
+instead of the usual <b>shadeR1</b>.
+
+<!-- LISTS -->
+<a name="c-lists"></a><h2><u>3.4</u>Lists for layout and action</h2>
+As with tables we can use lists for two purposes: A convenient way of organising
+vertical space and a powerful communication tool.  Have a look at the cheat sheet
+for what you need to know.  Notice how in all cases the real-estate of the list
+nicely encompasses the whole thing.<p>
+<ul>
+<li>The <b>bare</b> style gives you what is in effect a single column table.  What use is that?
+    Well you could put it inside a single row table when you don't want rows matching across.
+    You can use it to become a series of paragraphs, perhaps with different styling.  (Adding
+    <b>dotted</b> makes this more obvious.)  Most usefully you can quickly whisk-up a list
+    to put beside some text with something like <span class="code tag">UL class="bare bgblu w4 right frame1"</span> 
+    <span class="emph">(Bare list, sky background, 25% width floated right with a single line frame.)</span> 
+    <p>
+<li><span class="tag code">UL class=ticks</span> is a good way to implement a checklist.  The
+    default item glyph is a bare box.  Add <b>t0</b>, <b>t1</b>, <b>b0</b> or <b>b1</b> to each
+    list item as required. <p>
+<li>Adding <b>title</b> to <span class="code tag">UL</span> turns the first item into a
+    title.  This might appear an odd thing to do at first but it can be quite handy to
+    make sure that the title is closely associated with the list so that as the list 
+    moves or shifts during laying out it can't get separated.  <span class="emph">This
+    doesn't work with OL.</span><p> 
+<li>Adding <b>dotted</b> to <span class="code tag">UL</span> or <span class="code tag">OL</span>
+    introduces a break line between items which can sometimes be visually pleasing and 
+    helps to separate items.<p>
+<li>Normally sub-lists are implemented by nesting ULs or OLs within LIs.  You can 'cheat'
+    by adding <b>m</b>-something to the list item.  This is only sensible works for UL. 
+</ul>
+
+
+<a name="c-images"></a><h2><u>3.5</u>Pictures made simple</h2>
+We're all familiar with <span class="code tag">IMG</span> but we're also familiar with 
+reluctance to stick where they're put and stay with their caption. The cheat sheet shows
+the code and examples.  The styling of the caption is done in the CSS
+(<span class="code">div.img</span>) so you may want to have a look at that.
+
+<a name="c-misc"></a><h2><u>3.6</u>Miscellaneous features</h2>
+<h3><u>3.6.1</u>Email address</h3>
+One of the annoyances of the web is the harvesting of email addresses to be used to send spam.
+There is a technique used in the framework which makes it difficult for bots to steal
+this while being perfectly readable to a human.  To use it you need to edit the
+following two lines in the framework CSS:-
+<div class="w2 code">span.email:before {content:"<span class=blue">some_post_box</span>";}
+span.email:after  {content:"<span class=blue">some_domain</span>";}
+</div>
+In the HTML you put just <span class="code">&lt;span class=email&gt;@&lt;span&gt;</span>.
+When it comes to being displayed all browsers show the full email address
+and only IE allows it to be cut and pasted whole.  Most browsers only cut the '@'.
+<p>
+If you want to vary the email address on a document by document basis then put the 'before' and 'after' tweaks
+into a <span class="code tag">STYLE</span> block after the link to the framework CSS file. 
+
+
+<h3><u>3.6.2</u>Blocks of code</h3>
+Being a programmer I often want to display blocks of code.  That's simple except in IE.
+<span class="code tag">DIV class=code</span> with the lines of code inside.  There are
+two <span class="code tag">SPAN</span>s that work inside a code div.
+<ul>
+<li><b>note</b> An discussion about the code
+<li><b>slashes</b> formatting for where double-slash would be used
+</ul>
+
+
+<a name="c-cols"></a><h2><u>3.7</u>Newspaper columns</h2>
+<div class="col15 colRule">
+  This text should be displayed in a number of columns.  Each is declared as "15 em" wide.  If not then the
+  browser doesn't support 'newspaper' columns.  (We discussed the benefits of narrower columns of text
+  <a href="#c-tables">above</a>.)  The advantage of a newspaper column over a table is that the content
+  will automatically be flowed from the bottom of one column across to the top of the next and so on.
+  <p>
+  You can specify the number of columns you want with <b>col2</b>, <b>col3</b> or <b>col4</b> but usually
+  a better way is to set the column width and let the browser do the rest.  These widths are nominally
+  in ems but you may want to experiment.  The classes to use are <b>col10</b>, <b>col15</b>, <b>col20</b> or <b>col25</b>.
+  The other column style is <b>colRule</b> which adds a dotted line between columns.
+  <p>
+  Experiment by resizing the width of your browser to see how this works.  The style for this DIV is <b>col15 colRule</b>
+</div>
+
+
+<!-- -----------------------------------------------------------------------------------
+ooooooooooooo                     oooo                     o8o                      oooo   o8o      .    o8o                     
+8'   888   `8                     `888                     `"'                      `888   `"'    .o8    `"'                     
+     888       .ooooo.   .ooooo.   888 .oo.   ooo. .oo.   oooo   .ooooo.   .oooo.    888  oooo  .o888oo oooo   .ooooo.   .oooo.o 
+     888      d88' `88b d88' `"Y8  888P"Y88b  `888P"Y88b  `888  d88' `"Y8 `P  )88b   888  `888    888   `888  d88' `88b d88(  "8 
+     888      888ooo888 888        888   888   888   888   888  888        .oP"888   888   888    888    888  888ooo888 `"Y88b.  
+     888      888    .o 888   .o8  888   888   888   888   888  888   .o8 d8(  888   888   888    888 .  888  888    .o o.  )88b 
+    o888o     `Y8bod8P' `Y8bod8P' o888o o888o o888o o888o o888o `Y8bod8P' `Y888""8o o888o o888o   "888" o888o `Y8bod8P' 8""888P' 
+------------------------------------------------------------------------------------- -->
+<a name="technicalities"></a><h1><u>4</u>Technicalities</h1>
+<a name="t-printing"></a><h2><u>4.1</u>Printing</h2>
+<h6 class="warn w4 left"><u>Zone of fail</u>Browsers vary from appalling to not very good &mdash;
+  certainly not good enough for user documentation &mdash; in their ability to print.</h6>
+It is quite possible to print HTML but don't expect advanced formatting and web-fonts to work.
+The on-line HTML to PDF converters range from 'give-up' to 'something recognisable'. 
+<p>
+One of the issues is breaking pages.  Basically anything other than a hard page break is 
+unreliable.  To force a new page add <b>newPage</b> to something like a <span class="code tag">P</span> 
+or a <span class="code tag">DIV</span>.
+
+<a name="t-browsers"></a><h2><u>4.2</u>Browser differences and quirks</h2>
+<table>
+<tr><td><table class=glossary>
+      <tr><td>Firefox 5</td><td>This is my base browser.
+                                <ul class=ticks>
+                                <li class="t0">Rounded corners are not properly rendered when inside tables.
+                                <li class="t0">Web-fonts are not used for printing
+                                <li class="t1">Columns
+                                </ul>
+                                </td></tr>
+      <tr><td>Internet Explorer 8</td><td>Full of holes
+                                <ul class=ticks>
+                                <li class="t0">Rounded corners don't work
+                                <li class="t0">Web-fonts don't work.  Makes an awful mess.
+                                <li class="t0">Column justification in tables can't be done globally
+                                <li class="t0">Shadows don't work
+                                <li class="t0">Dotted separators don't work in lists
+                                <li class="t0">Columns
+                                </ul>
+                                </td></tr>
+      <tr><td>Safari 5.1 win</td><td>Different fonts nightmare
+                                <ul class=ticks>
+                                <li class="t0">Text spills out of the top of elements. 
+                                <li class="t0">Rounded corners don't work
+                                <li class="t0">Doesn't display span=tick in table when just a space as data
+                                <li class="t1">Columns
+                                </ul>
+                                </td></tr>
+</table></td><td><table class=glossary>                                
+      <tr><td>Opera 11.5 win</td><td>Excellent
+                                <ul class=ticks>
+                                <li class="t0">Slight problem with content inside rounded corners
+                                <li class="t0">Borders are flakey
+                                <li class="t1">Columns
+                                </ul>
+                                </td></tr>
+      <tr><td>Firefox 3.6 Linux</td><td>
+                                <ul class=ticks>
+                                <li class="t0">Rounded corners are not properly rendered when inside tables.
+                                <li class="t0">Web-fonts are not used for printing
+                                <li class="t1">Columns
+                                </ul>
+                                </td></tr>
+      <tr><td>Chrome 12.0 Linux</td><td>Excellent
+                                <ul class=ticks>
+                                <li class="t1">Columns
+                                <li class="t0">Dire printing
+                                </ul>
+                                </td></tr>
+      </table>
+</td></tr></table>
+
+
+<!-- -------------------------------------------------------------------------
+           .oooooo..o     .               oooo            
+          d8P'    `Y8   .o8               `888            
+          Y88bo.      .o888oo oooo    ooo  888   .ooooo.  
+           `"Y8888o.    888    `88.  .8'   888  d88' `88b 
+               `"Y88b   888     `88..8'    888  888ooo888 
+          oo     .d8P   888 .    `888'     888  888    .o 
+          8""88888P'    "888"     .8'     o888o `Y8bod8P' 
+                              .o..P'                      
+                              `Y8P'                       
+---------------------------------------------------------------------------- -->                                              
+<a name="style"></a><h1><u>5</u>Authoring and style</h1>
+<div class=fixFloat>
+    <a name="s-different"></a><h2><u>5.1</u>HTML is different</h2>
+    <div class="w3 left">
+    Writing directly in HTML is not suitable for everything or everybody &mdash; far from it.
+    However there is a niche for documents that carry a lot of information
+    and exploit the features of HTML to get it across to the reader effectively.
+    The purpose of this framework is to make it quicker to present
+    documents with consistent style.
+    <p>
+    This document is a good example of the sort of use for HTML.  A tutorial often benefits
+    from compartmentalisation of information and quick summaries.  Obviously while writing
+    this I've use a plethora of effects while you may find your work is 90% plain text
+    with the odd table or picture.  Nevertheless the framework makes it easy for you
+    to create a standard look and feel to your documents and sorts out a lot of tricky CSS
+    styling and positioning so all you have to do is bash the words onto the screen.
+
+    <a name="s-developing"></a><h2><u>5.2</u>Developing your own</h2>
+    <h6 class="hint right w2"><u>Steal the CSS</u>The CSS in this framework has a number of tricks
+    that you may want to use elsewhere.  By all means do so.</h6>
+    What you see here is my style that I've developed and amalgamated over time.
+    I expect you'll want to tweak the appearance to suit your preferences and add
+    features.  For that you have to get stuck into the CSS.  In the mean time
+    have a play so you can get a feel for the convenience of things like <b>H6</b> and <b>DIV=img</b>.
+    <p>
+    <span class="emph">You'll almost certainly want to fiddle with fonts.</span> 
+
+    <a name="s-reader"></a><h2><u>5.3</u>Remember the reader</h2>
+    Finally remember the reader.  They are probably tired and don't want to read your stuff anyway.
+    That's what I like about HTML, you can add interest by directing attention.  A few boxes, a
+    list of ticks and so on can encourage the reader to keep on going, take bits at a time and 
+    feel they are making quick progress.
+    </div>
+    <div class="w2 m1 left bggry frame1 round2">
+    <div class="f150 invert wall txc">Quick reference</div> 
+    <ul class=bare>
+    <li>Arrows <b><span class="red">span</span> arrowN, arrowNE, arrowE</b> ... <b>arrowNW</b>
+    <li>Borders <b>frame1 frame2 round1 round2 round3</b>
+    <li>Boxouts <b>boxOut</b>, <b><span class="red">h6</span> fact info hint warn dont</b>
+    <li>Code block <b><span class="red">div</span> code</b> <i>Inside span=<b>note</b> and span=<b>slashes</b></i>
+    <li>Colours - foreground <b>red green blue black white</b> 
+    <li>Colours - background <b>invert bgpnk bggrn bgblu bggry</b> 
+    <li>Columns <b><span class="red">table</span> c1r c2r </b> ... <b>c9r shadeC1 shadeLastC</b>
+    <li>Cursors for links <b><span class="red">a</span> download newWin newWinOffSite offSite video sound document</b>
+    <li>Email address <b><span class="red">&lt;span class=email&gt;@&lt;span&gt;</span></b> <i>Details need tweaking in CSS</i>
+    <li>Emphasis <b>todo tiny pin blob</b>
+    <li>Font sizes <b>f80 f90 f100 f110 f120 f150 f200 f300</b>
+    <li>Floating <b><span class="red">div</span> hardLeft left right centre center down floatfix clear</b>
+    <li>Headings <b>H1</b> ... <b>H3</b> <i>Underline section references</i>
+    <li>Links <b><span class="red">a</span> link button foot glos</b>
+    <li>Lists <b><span class="red">ul</span> bare ticks title dotted</b>
+    <li>List items <b><span class="red">li</span> t0 t1 b0 b1</b>
+    <li>Newspaper columns <b><span class="red">div</span> col2 col3 col4 col10 col15 col20 col25 colRule</b>
+    <li>Margins (ems) <b>m2</b> ...<b>m6</b>
+    <li>Miscellaneous p=<b>newPage</b> div=<b>sectionNum</b> div=<b>foot</b>
+    <li>Pictures <b><span class="red">h6</span> img</b> <span class="code tag">IMG</span> <i>goes inside followed by caption</i> 
+    <li>Rows <b><span class="red">tr</span> total titleR1 shadeR1 shadeR2 none</b>
+    <li>Tables - informal <b><span class="red">table</span> hlines boxed glossary</b>
+    <li>Tables - formal <b><span class="red">table</span> table </b>
+    <li>Text <b><span class="red">span</span> q emph name code path tag txl txc txr</b>
+    <li>Ticks <b><span class="red">span</span> tick0 tick1 tickBox tickBox0 tickBox1</b>
+    <li>Top of page <b><span class="red">div</span> topMenu title1 title2</b>
+    <li>Vertical space <b><span class="red">p</span> vspace gap</b>
+    <li>Widths <b>w2</b> ... <b>w6</b>, <b>w60</b> ... <b>w100</b>, <b>wall</b>
+    </ul>
+    </div>
+</div> 
+<div class="down w70 frame1 round2 bgwhi center shadow">
+  The author of the framework and this guide is Peter Fox, a freelance web developer from Essex, England.<br>
+  If you find it useful, find a bug, have some changes you'd like to share then let him know at <span class=email>@</span>
+</div>
+<p>
+<span class="f90 green">This version dated 5th September 2011</span>
+
+
+</body>
+</html>

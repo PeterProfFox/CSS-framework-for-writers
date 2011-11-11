@@ -1,0 +1,745 @@
+/* 29 Oct 11 : pad, plr and ptb added */
+
+/* WEB-FONTS */
+/* We need to be careful when using these as FF doesn't support printing with them */
+/* -weight and -style settings are needed by Chrome to fix bold bug                */
+@font-face { font-family:"ColabLig";  font-weight: normal; font-style: normal; src: url("ColabLig.otf") format("opentype");}  
+@font-face { font-family:"ColabMed"; src: url("ColabMed.otf") format("opentype");}  
+@font-face { font-family:"Chunk"; src: url("Chunkfive.otf") format("opentype");}  
+@font-face { font-family:"Garamond"; src: url("EBGaramond.otf") format("opentype");}  
+
+
+/* RESET */
+body, div, span, p, img, form, table, tbody, tfoot, thead, tr, th, td, iframe,
+h1, h2, h3, h4, h5, h6,  blockquote, pre, a, code, 
+dl, dt, dd, ol, ul, li, fieldset, applet,font, strike, strong, sub, sup, label, legend {
+	vertical-align: baseline;
+	font-family: inherit;	font-weight: inherit;	font-style: inherit; font-size: 100%;
+  line-height: 1.1;
+	outline: 0;	padding: 0;	margin: 0;	border: 0;
+}
+  
+/* BASICS */  
+body {
+  background-color: white;  /* White for printing, light beige for screen see below */
+	color: black;
+  padding: 0px 1em 0px 30px;
+  font-family:ColabLig,Verdana,Arial,Helvetica,Sans-serif;  /* san-serif default */
+  }
+.garamond {                               /* nice for printing - a bit spidery for screen */
+  font-family:Garamond,Serif;
+  font-size:105%;
+}
+.serif {
+  font-family:Palatino,Times New Roman,Serif;
+}
+ 
+  
+p {margin-top:1em;}
+div {margin-top:2px;} 
+
+/* TITLE AND HEADINGS */  
+@media screen {    /* fixed heading for navigation is not applicable to printing */
+body {
+  background-color: #F7F4E1;
+}
+div.topMenu {                           
+    position:fixed; top: 0;     /* This is a fixed navigation bar  */
+    width:100%;                 /* suitable for dropping <a>s onto */
+    margin-left: -30px;         /* that jump to other documents    */
+    background-color:#bcc;
+    color : black;
+    text-align:left;
+    padding-left:2em;
+    height:20px;
+    z-index:10;
+  }  
+}/* media */
+  
+.newPage {page-break-before:always;}  /* only for printing */
+  
+div.title1, div.title2 {
+   margin: 10px 10px 10px 0px;
+   color : black;
+   text-align : center;
+   -moz-box-shadow: 3px 3px 4px #777;
+   -webkit-box-shadow: 3px 3px 4px #777;
+   box-shadow: 3px 3px 4px #777;
+   background-color:#EAD596;   
+   font-family:Chunk,Serif;
+   padding: 5px 1em;
+}
+div.title1 {
+   font-size:300%;
+   margin-top:25px;
+}
+div.title2 {
+   font-size:220%;
+   color:#800000;
+}
+
+h1 {
+  font-family:Chunk,Arial,Sans-serif;
+  margin: 10px 10px 10px 0px;
+  padding:3px 1em 1px 40px;
+  color: #2664C0;
+  font-size:200%;
+  display:block;
+  -moz-box-shadow: 3px 3px 4px #777;
+  box-shadow: 3px 3px 4px #777;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  background-color:white;  
+  clear:both; 
+}
+h2 {
+  font-family:Chunk,Arial,Sans-serif;
+  padding-top:8px;
+  color: #2D84B1;
+  font-size:150%;
+  margin:8px 0px 2px -10px;
+  clear:both;
+}
+h3 {
+ font-family:Chunk,Arial,Sans-serif;
+ padding-top:1px;
+ color: #6281AC;
+ font-size:120%;
+ margin: 18px 0px 0px 0px;
+}
+
+
+
+/* GENERIC HIGHLIGHTING/COLOURS */
+.todo {
+  color:red !important;
+  background-color: yellow !important;
+}  
+.tiny {
+  color:#2A5420 !important;
+  font-size:66% !important;
+  font-family:inherited !important;
+}  
+
+/* EMPHASIS AND TICKS */
+span.q {                            /* span class=q has quote marks added for decoration */
+  color:blue;
+  font-style:italic;
+  padding:0px 5px;
+}  
+span.q:before, span.q:after{   
+  content:"\"";
+}
+span.name {color:#20706B;}       
+span.emph {
+  font-style: italic;
+  color:#24145A;
+  background-color:white;
+}
+.pin {
+  background-image:url('MapPinR.gif');
+  min-height:22px;
+  background-repeat:no-repeat;
+  padding-left:16px;
+  background-position:0 0;
+}  
+.blob {
+  background-image:url('pinkAnim.gif');
+  min-height:16px;
+  background-repeat:no-repeat;
+  padding-left:16px;
+  background-position:0 0;
+}  
+
+span.warn {
+  background-image:url('exclaim.gif');
+  min-height:18px;
+  background-repeat:no-repeat;
+  padding-left:18px;
+  background-position:0 -1;
+}  
+
+.tick0 {background-image:url('tick0.gif');min-height:14px;background-repeat:no-repeat;padding-left:16px;background-position:0 0;}  
+.tick1 {background-image:url('tick1.gif');min-height:14px;background-repeat:no-repeat;padding-left:16px;background-position:0 0;}  
+.tickBox {background-image:url('tickBox.gif');min-height:14px;background-repeat:no-repeat;padding-left:16px;background-position:0 0;}  
+.tickBox0 {background-image:url('tickBox0.gif');min-height:14px;background-repeat:no-repeat;padding-left:16px;background-position:0 0;}  
+.tickBox1 {background-image:url('tickBox1.gif');min-height:14px;background-repeat:no-repeat;padding-left:16px;background-position:0 0;}  
+
+.arrowN {background-image:url('an.gif');min-height:14px;background-repeat:no-repeat;padding-left:16px;background-position:left top;}  
+.arrowNE{background-image:url('ane.gif');min-height:14px;background-repeat:no-repeat;padding-right:16px;background-position:right top;}  
+.arrowE{background-image:url('ae.gif');min-height:14px;background-repeat:no-repeat;padding-right:16px;background-position:right top;}  
+.arrowSE{background-image:url('ase.gif');min-height:14px;background-repeat:no-repeat;padding-right:16px;background-position:right top;}  
+.arrowS {background-image:url('as.gif');min-height:14px;background-repeat:no-repeat;padding-left:16px;background-position:left top;}  
+.arrowSW {background-image:url('asw.gif');min-height:14px;background-repeat:no-repeat;padding-left:16px;background-position:left top;}  
+.arrowW {background-image:url('aw.gif');min-height:14px;background-repeat:no-repeat;padding-left:16px;background-position:left top;}  
+.arrowNW {background-image:url('anw.gif');min-height:14px;background-repeat:no-repeat;padding-left:16px;background-position:left top;}  
+
+
+/* COLOURS */
+.red   { color:red !important;}
+.green { color:green !important;}
+.blue  { color:blue !important;}
+.black { color:black !important;}
+.white { color:white !important;}
+.yellow{ color:yellow !important;}
+.invert{   
+  color:white !important;
+  background-color:black !important;
+  font-weight:bold !important;
+}
+.bgpnk {background-color:#fbb;}
+.bgyel {background-color:#feb;}
+.bggry {background-color:#ddd;}
+.bggrn {background-color:#ceb;}
+.bgblu {background-color:#bee;}
+.bgwhi {background-color:#fff;}
+.shadow {
+  -moz-box-shadow: 3px 3px 4px #777;
+  box-shadow: 3px 3px 4px #777;
+}
+
+/* TEXT SIZE AND JUSTIFICATION */
+.f80 { font-size:80% !important;}
+.f90 { font-size:90% !important;}
+.f100 { font-size:100% !important;}
+.f110 { font-size:110% !important;}
+.f120 { font-size:120% !important;}
+.f150 { font-size:150% !important;}
+.f200 { font-size:200% !important;}
+.f300 { font-size:300% !important;}
+
+/* PADDING (ie. between content and frame) */
+.plr { padding-left:1em; padding-right:1em;}
+.ptb { padding-top:5px; padding-bottom:5px;}
+.pad { padding: 5px 1em 5px 1em;}
+
+
+.txl,.txleft             { text-align:left !important;}
+.txc,.txcentre,.txcenter { text-align:center !important;}
+.txr,.txright            { text-align:right !important;}
+
+
+
+/* FRAMES, IMAGES AND ROUNDED CORNERS */
+.round1 {-moz-border-radius:  3px;border-radius: 3px;}
+.round2 {-moz-border-radius: 10px;border-radius: 10px;padding:5px;}
+.round3 {-moz-border-radius: 20px;border-radius: 20px;padding:5px;}
+
+.frame1 {border:1px solid black;}
+.frame2 {border:5px solid #ddd;}
+
+
+div.img {
+  display:table;                /* <-key setting */
+  color:white;
+  background-color:black;
+  font-weight:bold;
+  text-align:center;
+  overflow:hidden;
+  padding: 6px;
+}  
+div.img>img {width:100%;margin-bottom:3px;}
+
+/* USING SPACE HORIZONTALLY */
+.m1 {margin-left:1em !important;}
+.m2 {margin-left:2em !important;}
+.m3 {margin-left:3em !important;}
+.m4 {margin-left:4em !important;}
+.m5 {margin-left:5em !important;}
+.m6 {margin-left:6em !important;}
+
+.w2 {width:50% !important;}      /* Remember that these apply */
+.w3 {width:33% !important;}      /* relative to the parent    */
+.w4 {width:25% !important;}      /* container.  eg INSIDE a   */
+.w5 {width:20% !important;}      /* <td> you might want 100%  */
+.w6 {width:17% !important;}      /* or wall                   */
+.w60 {width:60% !important;}
+.w65 {width:65% !important;}
+.w70 {width:70% !important;}
+.w75 {width:75% !important;}
+.w80 {width:80% !important;}
+.w85 {width:85% !important;}
+.w90 {width:90% !important;}
+.w95 {width:95% !important;}
+.w100 {width:100% !important;}  /* <-- always 100% of container  */
+.wall {width:auto !important;}  /* <-- may use up to 100% width  */
+
+.hardLeft {float:left !important; margin-left:-30px;}
+.left {float:left !important;}
+.down {clear:left;}
+.right {float:right !important;}
+.center,.centre {
+  float:none !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  clear:both;
+  text-align:center;
+}  
+.clear {clear:both;} 
+
+/* VERTICAL SHIMS AND CLEARFIX */
+p.vspace {
+  height:50px;
+  clear:both:
+}  
+p.gap {height:10px;}
+div.floatFix:after,div.floatfix:after {   /* clearfix  renamed to be easier to remember when needed */
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+} 
+
+/* BOX-OUT AND HORIZONTAL DIVISION */
+h6{
+  display:table;                /* <-key setting */
+  text-align:center;
+  overflow:hidden;
+  padding: 0px;
+  color:inherited;
+  -moz-border-radius: 7px !important; 
+  border-radius: 7px !important;
+  margin:3px;
+}  
+h6>u {
+  display:block;
+  width:100%;
+  margin:0px;
+  text-decoration:none;
+  font-weight:bold;
+  letter-spacing:150%;
+}
+h6.info{border:1px solid black;background-color:white;}
+h6.info>u{background-color:black;color:white;}
+h6.fact{border:1px solid blue;background-color:white;}
+h6.fact>u{background-color:blue;color:white;}
+h6.hint{border:1px solid green;background-color:#dfc;}
+h6.hint>u{background-color:green;color:yellow;}
+h6.dont{border:1px solid red;background-color:#fdd;}
+h6.dont>u{background-color:red;color:white;}
+h6.warn{border:1px solid olive;background-color:#feb;}
+h6.warn>u{background-color:yellow;color:#431;}
+
+div.boxout,div.boxOut {   /* defaults to float left 25% width */
+  display:block;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  background-color:white;
+  border:1px solid #D7E4F7;
+  padding:3px 7px;
+  margin:3px 7px;
+  float:left;
+  width:25%;
+  color: #2664C0;
+  font-size:90%;
+  font-family:ColabMed,Serif;
+}
+div.sectionnum,div.sectionNum,h2>u,h3>u{    /* used for numerical references in the margin */
+  float:left;
+  clear:left;
+  margin:2px 4px 2px -30px;
+  padding:2px 4px;
+  width:35px;
+  -moz-border-radius: 0px 5px 5px 0px;
+  border-radius: 0px 5px 5px 0px;
+  border:2px outset #777;
+  border-left:0px;
+  background-color:#777;
+  color: white;
+  text-decoration:none;
+  font-size:13px;
+  font-family:ColabMed,Serif;
+  text-align:center;
+}
+
+h1>u {
+  float:left;
+  clear:left;
+  margin:2px 10px 2px -30px;
+  padding:2px 4px;
+  width:30px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  border:2px solid #777;
+  background-color:#777;
+  color: white;
+  text-decoration:none;
+  font-size:18px;
+  font-family:ColabMed,Serif;
+  text-align:center;
+}
+
+
+/* LINKS */
+a.button {
+  margin : 0 5 0 0;
+  padding: 0 3px;
+  border : 1px outset #999;
+  background-color : #eee;
+  white-space : nowrap;
+  text-decoration : none;
+  color : #08f;
+  font-weight : normal;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}  
+a.button:hover {color: black;}  
+
+a.link {
+  padding : 0;
+  text-decoration : none;
+  margin : 0;
+  background-image : none;
+  border-style:none;
+  background-color : inherited;
+  white-space : wrap;
+  color : #08f;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color:white;
+  border:1px solid #D7E4F7;
+}  
+a.link:hover {
+  color: #800000;
+  border:1px solid #800000;
+}  
+a.glos {
+  padding : 0;
+  text-decoration : none;
+  margin : 0;
+  font-style:italic;
+  border-style:none;
+  color : #08f;
+  background-color : inherited;
+  white-space : wrap;
+}  
+a.glos:after{
+  content:"^";
+  color : #008000;
+  font-weight:bold;
+}
+a.glos:hover {border-bottom:1px solid #080000;}  
+
+a.foot {
+  vertical-align:super;
+  font-size:80%;
+  font-weight:bold;
+  padding:0px 2px;
+  color:blue;
+  background-color:yellow;
+  text-decoration:none;
+  display:inline-block;
+  border:1px solid blue;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+}
+
+div.foot{
+  padding-left:30px;
+  color : blue;
+  font-size:90%;
+}
+  
+div.foot>u{
+  clear:left;
+  float:left;
+  display:inline-block;
+  width:20px;
+  padding:0px;
+  color:blue;
+  margin:1px 2px 1px -30px;
+  background-color:yellow;
+  text-decoration:none;
+  text-align:center;
+  border:1px solid blue;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+}
+
+
+/* CURSOR VARIANTS FOR USE WITH <A> */  
+.download { cursor: url("downloadHC.cur") 5 21, auto;}
+.newWin { cursor: url("newWindowHC.cur") 5 1, auto;}
+.newWinOffSite { cursor: url("offSiteNewWindowHC.cur") 21 5, auto;}
+.offSite { cursor: url("offSiteHC.cur") 21 5, auto;}
+.video{ cursor: url("projector.cur") 10 8, auto;}
+.sound{ cursor: url("musicNote.cur") 4 14, auto;}
+.document{ cursor: url("document.cur") 6 8, auto;}
+
+/* UNCOPYABLE EMAIL *
+   To use this the html is just <span class=email>@</span>
+   Possibly adapt the before or after element by redefining
+   :before and :after in a style block in the document
+   (after the link to this file.)                        */
+span.email {
+  color:#08f;
+  background-color:white;
+  font-weight:bold;
+}
+span.email:before {content:"author";}
+span.email:after  {content:"vulpeculox.net";}
+
+/* FORMAL TABLES *
+class=table ... white lined table
+     =table R1 ... first row is headings
+     =table C1 ... first col is labels   
+     =table C1 R1 ... both col+row headings      
+*/  
+/* (IE disaster area) */
+table {	border-collapse: collapse; border-spacing: 0;	}
+caption,th,td {	font-weight: normal;	text-align: left;	}
+
+/* justification td by td */
+td.centre,td.center{text-align:center;}
+td.left{text-align:left;}
+td.right{text-align:right;}
+td.full{text-align:justify;}
+
+/* justification specified in table column by column */
+table.c1r td:first-child{text-align:right;}
+table.c2r td:nth-child(2){text-align:right;}
+table.c3r td:nth-child(3){text-align:right;}
+table.c4r td:nth-child(4){text-align:right;}
+table.c5r td:nth-child(5){text-align:right;}
+table.c6r td:nth-child(6){text-align:right;}
+table.c7r td:nth-child(7){text-align:right;}
+table.c8r td:nth-child(8){text-align:right;}
+table.c9r td:nth-child(9){text-align:right;}
+
+table.table {                    
+  border: 1px none black;
+  border-collapse:collapse;
+  margin:4px 10px 4px 10px;
+}
+table.table  td, table.table  th {
+  border: 1px solid black;
+  padding:0px 4px 0px 4px;
+  background-color:white;
+}
+table.titleR1 tr:first-child td{
+  font-size:120%;
+  color:white;
+  font-weight:bold;
+  background-color:#399 !important;
+  border:1px solid black !important;
+}
+table.shadeR1 tr:first-child td{ 
+  font-weight : bold;
+  background-color:#bcc !important;
+}
+table.shadeR2 tr:nth-child(2) td{   /* used when we want to use the first row for a global title */
+  font-weight : bold;
+  background-color:#bcc !important;
+}
+table.shadeC1 tr td:first-child {
+  background-color:#D5F5F5;
+}
+table.shadeLastC tr td:last-child {
+  background-color:#ddd;
+  border-left:2px solid black;
+  font-weight:bold;
+}
+
+/* INFORMAL TABLES *
+  Default for a <table> without class is no lines
+  add class elements:
+    hlines ..... horizontal lines
+    boxed ...... All lines
+    ar1 ........ align column 1 right
+    glossary ... first column is bold
+*/
+
+
+/* (IE disaster area) */
+td {
+  vertical-align:top;
+  padding:4px;
+}  
+/* IE 8 bug means we have to be verbose.  Should be td[colspan] */
+td[colspan*="0"],td[colspan*="2"],td[colspan*="3"],td[colspan*="4"],td[colspan*="5"],td[colspan*="6"],
+td[colspan*="7"],td[colspan*="8"],td[colspan*="9"],td[colspan*="11"]{text-align:center;}  
+
+.hlines tr{
+  background-color: #FEFBE8; 
+  border-bottom:1px solid #800000;
+}  
+table.hlines tr:last-child{ 
+  border-bottom:none;
+}
+tr.total{ 
+  border-top:2px solid black;
+}
+tr.total>td{
+  font-weight:bold;
+  background-color:#ddd;
+}
+
+table.boxed {
+  background-color: #FEFBE8; 
+  border:1px solid #800000;
+}  
+table.boxed td {
+  border-right:1px solid #800000;
+}  
+table.boxed tr{
+  border-bottom:1px solid #800000;
+}  
+table.glossary td:first-child {
+  font-weight:bold;
+}
+tr.none>td {          /* remove lines and shades and colours */
+  background-color: #F7F4E1 !important;
+  border:none !important;
+  font-weight:normal !important;
+  padding:2px;
+  color:black;
+}  
+
+
+
+/* CODE */   
+/* (IE disaster area) */
+span.path {
+  font-family:monospace;
+  color:#490880;
+  font-weight:bold;
+}
+span.code {
+  background-color:white;
+  white-space : pre;
+  color:#800000;
+  font-family:monospace;
+  font-size:95%;
+  line-height:120%;
+}  
+span.tag:before{content:"<";}  /* use with span.code */
+span.tag:after{content:">";}
+
+
+div.code {
+  border:1px solid black;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color:white;
+  white-space : pre;
+  padding-left:1em;
+  color:#800000;
+  font-family:monospace;
+  margin-top:3px;
+  font-size:95%;
+  line-height:120%;
+}  
+div.code>span.note {
+  -moz-border-radius: 7px;
+  border-radius: 7px;
+  border:1px solid #D7E4F7;
+  padding:0px 7px;
+  margin:6px;
+  background-color: #ceb;
+  width:25%;
+  color: black;
+  /*font-size:90%;*/
+  font-family:ColabMed,Serif;
+}
+
+div.code>span.slashes {
+  font-style:italic;
+  padding:0px 7px;
+  width:25%;
+  color: #008000; 
+  font-size:110%;
+  font-family:ColabMed,Serif;
+}
+/* LISTS */
+ol,
+ul {
+  list-style-position: outside;
+  margin-left:18px;
+  padding:0px 3px 2px 20px !important;
+}
+
+
+ul {list-style-type:circle;}  
+li {margin-bottom:3px;}
+
+ul.title li:first-child{
+  list-style-type:none;
+  margin:0px 0px 0px -16px;
+  background-color:#bcc !important;
+  color:black;
+  font-weight : bold;
+  padding:1px;
+  text-align:center;
+}  
+
+ul.bare {
+  list-style-type:none;
+  margin-left:0px;
+  padding:3px;
+}
+ul.ticks {
+  list-style-type:none;
+  position:relative;
+  margin-left:5px;
+  padding:5px 13px 2px 20px;
+}
+ul.ticks>li{
+  list-style-image:url('tickBox.gif');
+  min-height:14px;
+  position:relative;
+  left:10px;
+}
+ul.ticks>li:before { display: marker; marker-offset: 1px}  
+ul.ticks>li.t0{list-style-image:url('tick0.gif');}  
+ul.ticks>li.t1{list-style-image:url('tick1.gif');}  
+ul.ticks>li.b0{list-style-image:url('tickBox0.gif');}  
+ul.ticks>li.b1{list-style-image:url('tickBox1.gif');}  
+
+ul.dotted>li:not(:last-child),
+ol.dotted>li:not(:last-child){border-bottom:2px dotted olive;}
+
+/* COLUMNS */
+div.colRule {
+  -webkit-column-rule: 2px dotted #bbb;
+  -moz-column-rule: 2px dotted #bbb;
+  column-rule: 1px dotted #bbb;
+}
+  
+div.col2 {
+  -webkit-column-count:2;
+  -moz-column-count:2;
+  column-count:2;
+}  
+div.col3 {
+  -webkit-column-count:3;
+  -moz-column-count:3;
+  column-count:3;
+}  
+div.col4 {
+  -webkit-column-count:4;
+  -moz-column-count:4;
+  column-count:4;
+}  
+
+div.col10 {
+  -webkit-column-width:10em;
+  -moz-column-width:10em;
+  column-width:10em;
+}  
+div.col15 {
+  -webkit-column-width:15em;
+  -moz-column-width:15em;
+  column-width:15em;
+}  
+div.col20 {
+  -webkit-column-width:20em;
+  -moz-column-width:20em;
+  column-width:20em;
+}  
+div.col25 {
+  -webkit-column-width:25em;
+  -moz-column-width:25em;
+  column-width:25em;
+}  
+ 

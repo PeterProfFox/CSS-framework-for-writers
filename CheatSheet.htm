@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cheat sheet for Peter's standard markup</title>
+  <link href="PefStdDoc.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class=topMenu>div=topMenu <a class=link href="#">a=link</a>
+<div class="boxout todo right w6">Updated:29 October 2011</div>
+<div class="boxout right w4">/misc/style/CheatSheet.htm</div>
+</div>
+<div class=title1><span class=tiny>div=title1</span>Cheat sheet for Peter's standard markup</div>
+<div class=title2><span class=tiny>div=title2</span>Style defined in
+<span class=name>/misc/style/PefStdDoc.css</span></div>
+<h1>H1 Heading level 1</h1>
+<h2>H2 Heading level 2</h2>
+
+<table><tr><td>
+    <h3>H3 Plain text</h3>
+    Plain text <b>bold</b> <i>italic</i><br>
+    <span class=q>span=q quote marks added automatically</span><br>
+    <span class=emph>span=emph</span><br>
+    <span class=name>span=name</span><br>
+    <span class="code">span=code </span> <span class=tiny> Also applies to div.  See Below.</span><br>
+    <span class="path">span=path </span> <br>
+    <span class="shadow">span=shadow </span> <span class=tiny> Also applies to other elements</span><br>
+    <div class="frame1 round2 bggrn">Shortcut notation: Where you see<br>
+    something like <span class=code>div=xyz</span> it means<br>
+    HTML <span class=code>&lt;div class=xyz&gt;</span></div>
+    
+
+</td><td>    
+    <h3>Modifiers applicable to most elements</h3>
+    Width fractions: <b>w2</b> <b>w3</b> <b>w4</b> <b>w5</b> <b>w6</b>
+    Width percentages: <b>w60</b> <b>w65</b> <b>w70</b> <b>w75</b> <b>w80</b> <b>w85</b> <b>w90</b> <b>w95</b> <b>w100</b><br>
+    Horizontal position: (float)<b>hardLeft</b> <b>left</b> <b>right</b> <b>center</b> <b>clear</b><br>
+    Vertical position: (float) <b>down</b> forces a floater onto the next 'row'.<br>
+                      <span class=tiny>Actually it is just CSS 'clear:left'.
+                       In my experience it is better to use tables or lists for vertical space organisation.</span><br>
+    Left margin: <span class="tiny">Space on left of element.  (Measured in em)</span> <b>m1</b> <b>m2</b> <b>m3</b> <b>m4</b> <b>m5</b> <b>m6</b> <br>
+    Padding :  <span class="tiny">Space between content and frame.</span> Left and right 1em: <b>plr</b> <span class="m1"> Top</span> and bottom 5px: <b>ptb</b> <span class="m1"> Combine plr and ptb</span>: <b>pad</b> <br>
+    Emphasis : <span class=todo>todo</span>
+               <span class="m1 tiny">tiny</span>
+               <span class="m1 pin" style="display:inline-block;">pin</span>
+               <span class="m1 blob">blob</span>
+               <span class="m1 warn">warn</span><br>
+               
+    Ticks : <span class="m1 tick0"> tick0</span>     
+            <span class="m1 tick1"> tick1</span>     
+            <span class="m1 tickBox"> tickBox</span>     
+            <span class="m1 tickBox0"> tickBox0</span>     
+            <span class="m1 tickBox1"> tickBox1</span> <span class=tiny>See also <b>ul=ticks</b> below.</span><br>
+    Arrows : <span class="m1 arrowNW shadow"> arrowNW</span>
+             <span class="m1 arrowN shadow"> arrowN</span>
+             <span class="m1 arrowNE shadow"> arrowNE</span> <span class=tiny>And so on. (Shadows added for clarity.)</span>
+             <br>
+    Colours : <span class=red>red</span>
+              <span class=green>green</span>
+              <span class=blue>blue</span>
+              <span class=black>black</span>
+              <span class=yellow>yellow</span> 
+              <span class=white>white</span> 
+              <span class=invert>invert</span>
+              <span class=bgpnk><b>bgpnk</b></span> 
+              <span class=bggrn><b>bggrn</b></span> 
+              <span class=bgblu><b>bgblu</b></span> 
+              <span class=bggry><b>bggry</b></span> 
+              <span class=bgyel><b>bgyel</b></span> 
+              <span class=bgwhi><b>bgwhi</b></span> 
+              <br>
+    Sizes : <span class=f80>f80</span>
+            <span class=f90>f90</span>
+            <span class="f100 red">f100</span>
+            <span class=f110>f110</span>
+            <span class=f120>f120</span>
+            <span class=f150>f150</span>
+            <span class=f200>f200</span>
+            <span class=f300>f300</span>
+            <b>
+            <span class=f80>f80</span>
+            <span class="f100 red">f100</span>
+            <span class=f200>f200</span>
+            </b>
+</td></tr></table>
+
+<h3>Boxouts and fonts</h3>
+<div class="frame1 round1 hardLeft clear"><b>hardLeft</b></br>Banged up<br>against the<br> left edge</div>
+<div class="boxOut">div.boxout normally floats left and is 25% wide but these can
+  be changed by adding <b>right</b> and <b>w*</b>. 
+  <span class="red bgyel">Use <span class="black">floatFix</span> on the surrounding DIV if you get unwanted overflows.
+  Also applies to H6 boxes.</span></div>
+<div class="boxOut w5 right todo">This box has class "boxOut w5 right todo".</div>
+<span class=garamond>This is in <span class=red>garamond</span>.  You can see it is a bit spidery for
+the screen but prints nicely. <i>It would do if web fonts were supported by FF when printing.</i> <b>This is in garamond.  You can see it is a bit spidery for
+the screen but prints nicely. <i>It would do if web fonts were supported by FF when printing.</i></b></span>
+<hr class="invert shadow w2">
+<div class=sectionNum>4</div>
+<span class=serif>This is in <span class=red>serif</span>.  It is fine for the screen if you like serifs.
+<b>This is in serif.  It is fine for the screen if you like serifs.</b></span>
+<hr class="shadow w2">
+<span style="font-family:ColabLig,Arial,Sans-serif;">This is the default font.  Sans-serif for easy reading on the screen.
+<b>This is the default font.  Sans-serif for easy reading on the screen.</b></span>
+<br><div class="center blue bgblu"><span class="arrowS">The</span> vertical space below is 50px made by adding class <b>vspace</b> to a &lt;p&gt; <span class="arrowS"> </span> </div>
+<p class=vspace>
+<div class="center blue bgblu">The vertical space above is 50px <span class="arrowNW"> </span><span class="arrowN"> </span><span class="arrowNE"> </span>made by adding class <b>vspace</b> to a &lt;p&gt; </div>
+<div class=sectionNum>4.3</div>
+<div class="boxOut w2"><span class="arrowW">The</span> numerical section references on the left are class <b>sectionNum</b>.  The same effect can be 
+obtained by putting the number underlined inside a heading. eg <span class="code">&lt;h3&gt;&lt;u&gt;3.2.1&lt;/u&gt; ... &lt;/h3&gt;</span></div> 
+<span class=red>
+<b>newPage</b> forces a new page <span class=emph>when printing</span> so the item starts at the top of a new
+page. If this wasn't attached to the 
+H3 heading below here then the following table would be split across two pages
+without any regard for content.</span>
+<p class="newPage">
+<h3 class="clear">H6 with underline used to make styled boxouts</h3>
+  <h6 class="w5 fact left"><u>fact</u>To make a box like this hi-jack <b>h6</b>. Mark the headline as underlined (<b>&lt;u&gt;</b>) and the rest of the text plain.</h6>
+  <h6 class="w5 info left m1"><u>info</u>The styles <b>fact</b>, <b>info</b>, <b>hint</b>, <b>warn</b> and <b>dont</b> are intended to be used in documents in a standard fashion that's obvious to the reader.</h6>
+  <h6 class="w4 hint left m1"><u>hint</u>The full thing looks like this:<br><span class=code>&lt;h6 class=hint&gt;&lt;u&gt;Heading&lt;/u&gt;text&lt;/h6&gt;</span></h6>
+  <h6 class="w4 warn left down" ><u>warn</u>These boxes have had widths and gap between them set with <b>w5</b>, <b>m1</b>, <b>left</b> etc. 
+                                    This one also has <b>down</b> to bring it onto a new row.</h6>
+  <h6 class="w4 dont right m1 shadow"><u>dont</u>You can add other formatting like this <b>shadow</b> but <span class=red>try not to</span> as the idea is that the reader gets consistent formatting</h6>
+<p>
+<h3 class="clear">Rounded corners and image captions</h3>
+<div class="center green">All the following images are automatically sized.  There are no widths specified.</div>
+<table><tr> 
+  <td>
+    <table class=boxed>
+    <tr>
+    <td><div class="frame1">frame1</div></td>
+    <td><div class="frame2">frame2</div></td>
+    <td><div class="frame1 round1">frame1<br>round1</div></td>
+    <td><div class="frame1 round2">frame1<br>round2</div></td>
+    <td><div class="frame1 round3">frame1<br>round3</div></td>
+    <td><div class="frame2 round2 bgwhi">frame2<br>round2<br>bgwhi</div></td>
+    </tr><tr>
+      <td colspan=3><div class="img round2 ">
+        <img src="clubFoo.jpg">
+        This is a div=img containing an ordinary &lt;img&gt; which is scaled to the
+        appropriate width.  Text in the div follows on on as a caption.
+      </div>
+      </td>
+      <td colspan=2><div class="img round2 ">
+        <img src="clubFoo.jpg">
+        This is a div=img containing an ordinary &lt;img&gt; which is scaled to the
+        appropriate width.  Text in the div follows on on as a caption.
+      </div>
+      </td>
+      <td><div class="img round2 ">
+        <img src="clubFoo.jpg">
+        This is a div=img containing an ordinary &lt;img&gt; which is scaled to the
+        appropriate width.  Text in the div follows on on as a caption.
+      </div>
+      </td>
+      </tr>    
+    </table>
+  </td><td>
+    <div class="img round2 ">
+      <img src="clubFoo.jpg">
+      This is a div=img containing an ordinary &lt;img&gt; which is scaled to the
+      appropriate width.  Text in the div follows on on as a caption.
+    </div>
+    <span class=code>
+    &lt;div class="img round2"&gt;
+      &lt;img src="clubFoo.jpg"&gt;
+      This is a div=img containing
+      an ordinary &lt;img&gt; which
+      is scaled to the appropriate
+      width.
+    &lt;/div&gt;</span>
+  </td>
+</tr></table>
+
+
+<h2>H2 Links etc</h2>
+<table><tr><td>
+    <table>
+      <tr>
+        <td>Ordinary <b>a</b> <a href="#">shown like this</a></td>
+        <td>Links to go in top menu <b>a=link</b> <a class=link href="#">shown like this</a></td>
+      </tr><tr>
+        <td>Glossary <b>a=glos </b> <a class=glos href="#">shown like this</a> </td>
+        <td>Button style links <b>a=button </b> <a class=button href="#">shown like this</a></td>
+      </tr><tr>
+        <td colspan=2>
+          Footnote <b>a=foot </b> <a class=foot href="#">5</a>
+        </td>
+      </tr></table>
+</td><td>
+Cursor variants: <span class=emph>Move cursor over to see</span>
+<ul class=bare>
+<li><span class=download><b>a=download</b></span> <span class="m1 newWin"><b>a=newWin</b></span>
+<li><span class=newWinOffSite><b>a=newWinOffSite</b></span> <span class="m1 offSite"><b>a=offSite</b></span>
+<li><span class=video><b>a=video</b></span> <span class="sound m1"><b>a=sound</b></span> <span class="m1 document"><b>a=document</b></span>
+</ul>
+
+</td></tr></table>
+      
+      Email links (non-active) that are difficult to copy.  Details need hacking in the css.  
+
+Just <b>&lt;span class=email&gt;@&lt;span&gt;</b>  eg <span class=email>@</span> To vary
+the email address on a page by page basis put the following into a &lt;style&gt; block
+<span class=code>span.email:before {content:"some_post_box";} span.email:after  {content:"some.domain";}</span>
+
+
+<h1 class="newPage"><u>5</u>H1 Tables 
+   <div class="boxout float right w3" style="font-size:11px">
+   The section numbers are obtained by putting them in the Hs as underlines.
+   eg <span class="code">&lt;h1&gt;&lt;u&gt;5.1&lt;/u&gt;...&lt;/h1&gt;</span></div></h1>
+<h2><u>5.1</u>H2 Informal tables</h2>
+<div class="frame1 round2">
+  Informal tables don't have any class but they can be tweaked by using
+  <b>hlines</b> to add horizontal lines, <b>boxed</b> for all lines.
+  Adding <b>c<span class="red f110">n</span>r</b> will right-justify the specified column.
+</div>
+
+
+<p>
+<table class="w2 right ar1">
+<tr><td>Firstly</td><td>
+<b>This table has class "w2 right" and two columns . . .</b>
+Ut wisi enim ad minim veniam, quis nostrud exerci tation 
+</td></tr>
+<tr><td>Secondly</td><td>
+<b> . . . and two rows</b>ifend option congue nihil imperdiet doming id 
+quod mazim placerat facer possim assum. Typi non habent claritatem 
+</td></tr>
+</table>
+<div class="frame1 round2">
+<b>This is plain text which isn't in a table at all</b>
+<div class="boxOut w4 left">When <span class="code">colspan=<i>n</i></span> is used text is automatically centered.</div> 
+Ut wisi enim ad minim veniam, quis nostrud exerci tation 
+ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. 
+quod mazim placerat facer possim assum. Typi non habent claritatem 
+</div>
+<p class="clear">
+<div class="frame1 round2 floatFix">
+  <table class="w6 left c2r" >
+  <tr><td colspan=2><i>w6 left <b>c2r</b></i></td></tr>
+  <tr><td>one</td><td>1</td></tr>
+  <tr><td>seven</td><td>7</td></tr>
+  <tr><td>seventeen</td><td>17</td></tr>
+  </table>
+  <table class="w5 c2r left hlines m2 shadow">
+  <tr><td colspan=2><i>w5 m2 left shadow</i> <b>hlines c2r</b> (<span class="green">tr=total on last row</span>)</td></tr>
+  <tr><td>Big ones</td><td>1000</td></tr>
+  <tr><td>Small ones</td><td>70</td></tr>
+  <tr class="total"><td>Total</td><td>1070</td></tr>
+  </table>
+  <table class="w5 left shadeC1 shadeR1 boxed m2">
+  <tr><td colspan=2><i>w5 m2 left</i> <b>shadeC1 shadeR1 boxed</b></td></tr>
+  <tr><td>one</td><td><span class="tick1"> </span></td></tr>
+  <tr><td>seven</td><td><span class="tick1"> </span><span class="tick0"> </span></td></tr>
+  <tr><td>seventeen</td><td><span class="tick0"> </span><span class="tick1"> </span><span class="tick1"> </span></td></tr>
+  </table>
+  <table class="w4 left glossary m1 frame2 bgpnk">
+  <tr><td colspan=2 class="centre" style="font-weight:normal;"><i>w4 m1 left frame2 bgpnk</i> <b>glossary</b><hr></td></tr>
+  <tr><td>Bee-line</td><td>Shortest distance between two points</td></tr>
+  <tr><td>Feline</td><td>Member of the cat family</td></tr>
+  <tr><td>Saline</td><td>Salty</td></tr>
+  </table>
+</div>
+
+<h2><u>5.2</u>H2 Formal tables</h2>
+<div class="frame1 round1 bgwhi">
+  Class <b>table</b> gives white background and lines.
+</div>
+<table class="table shadeC1 titleR1 shadeR2 c2r c3r c4r shadeLastC right w3">
+<tr><td colspan=4>titleR1</td></tr>
+<tr><td><span class="arrowE">shadeR2</span></td><td>Jan</td><td>Feb</td><td><span class="arrowS">shadeLastC</span></td></tr>
+<tr><td><span class="arrowS">shadeC1</span></td><td>50</td><td>66</td><td>116</td></tr>
+<tr><td>Elephants</td><td>5</td><td>4</td><td>9</td></tr>
+<tr><td>Dogs</td><td>12</td><td>16</td><td>28</td></tr>
+<tr class=total><td>tr=total</td><td>67</td><td>86</td><td>153</td></tr>
+<tr class=none><td colspan=4 class=txl>Using <b>tr=none</b> on a row is handy for things like notes</td></tr>
+</table>
+<ul>
+<li>The table on the right has the styles<br>
+ <b>table shadeC1 titleR1 shadeR2 c2r c3r c4r shadeLastC</b> right w3
+<li><b>shadeC1</b> highlights the labels in the first column. 
+<li><b>shadeLastC</b> highlights the 'totals' in the last column. 
+<li><b>titleR1</b> lets us use the first row for a title.
+<li><div class="boxout w4 right">Without a title we would have used <b>shadeR1</b></div>
+<b>shadeR2</b> highlights the column headings in the second row.
+<li class="frame1 bggrn w3"><b>c<span class="red f110">n</span>r</b> indicates the
+    specified column should be right justified.
+<li class="frame1 bgpnk w3"><b>c<span class="red f110">n</span>r</b> and <b>shadeR2</b>
+    and <b>shadeLastC</b> don't work in IE&lt;9. You have to style each TD by hand :(             
+<li>Other common styles applied to TABLE <b>w</b><i>n</i>, <b>left</b> and <b>right</b>
+<li><span class="code tag">TR class=total</span> has the effect shown on the last row
+</ul>  
+
+
+<h3><u>5.2.1</u>Blank formal tables</h3>
+<div class="boxOut right w5">For cutting and pasting</div>
+<table><tr>
+<td>
+      <table class="table shadeC1 shadeR1">
+      <tr><td> </td><td>~</td></tr>
+      <tr><td>~</td><td>~</td></tr>
+      </table>
+</td><td>
+      <table class="table shadeC1 shadeR1">
+      <tr><td> </td><td>~</td><td>~</td></tr>
+      <tr><td>~</td><td> </td><td> </td></tr>
+      </table>
+</td><td>
+      <table class="table shadeC1 shadeR1">
+      <tr><td> </td><td>~</td><td>~</td><td>~</td></tr>
+      <tr><td>~</td><td> </td><td> </td><td> </td></tr>
+      </table>
+</td><td>
+      <table class="table shadeC1 shadeR2 titleR1">
+      <tr><td colspan=5>5-cols</td></tr>
+      <tr><td> </td><td>~</td><td>~</td><td>~</td><td>~</td></tr>
+      <tr><td>~</td><td> </td><td> </td><td> </td><td> </td></tr>
+      </table>
+</td><td>
+      <table class="table shadeC1 shadeR2 titleR1 shadeLastC">
+      <tr><td colspan=6>6 cols + totals</td></tr>
+      <tr><td> </td><td>~</td><td>~</td><td>~</td><td>~</td><td>~</td></tr>
+      <tr><td>~</td><td> </td><td> </td><td> </td><td> </td><td> </td></tr>
+      <tr class=total><td>~</td><td> </td><td> </td><td> </td><td> </td><td> </td></tr>
+      </table>
+</td></tr></table>
+      
+<p class="newPage">
+<h1>Code documentation</h1>
+<div class="boxOut right w3">
+<b>span=slashes</b> is used where you'd have 'double slashes' in code.<p>
+<b>span=note</b> inserts commentary notes.</div>
+<b>span=path</b> is used for file paths. For example <span class=path>f:/temp/bits/things.txt</span><br>
+<b>span=code</b> is used for short bits of code. For example <span class=code>var msg = 'error';</span><br>
+Quantities of code can be listed with <b>div=code</b>.  For example
+<div class="boxOut todo right w6">Internet Explorer has known bugs in this department</div>
+<div class="code clear">$rv = false;
+  $scoredPage = str_replace('/','_',$Page);
+  $pageInfo = file(LOCAL_INFO_PATH . '/pageInfo.txt',FILE_TEXT + FILE_IGNORE_NEW_LINES );
+  <span class=note> we have the full list by now</span>
+  foreach($pageInfo as $pi){                  <span class=slashes>run through lines</span>
+    if(strpos($pi,'.htm ')!==false){          <span class=slashes>ignoring blank/comments</span>
+      $bits = explode(' ',trim($pi));         <span class=slashes>split into page and parameters</span>
+      if($Page==$bits[0]){                    <span class=slashes>we have the specified page</span>
+      <span class=note> continues etc. etc.</span>
+</div>
+
+<h1>Lists</h1>
+<table class="shadeR1 frame1">
+<tr><td>ul=title</td><td>ul=bare</td><td>ul=ticks</td><td>ol=dotted</td></tr>
+<tr valign=top>
+  <td>
+    <ul class="title bgyel">
+    <li>Item 1 turned into a title
+    <li>Second item
+    <li>nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in
+    <li class="frame2 round1 bgpnk shadow"><div class="boxOut tiny right" style="width:60px">Tiny nested div</div>
+                                           <span class=pin>You</span> can of course do just about anything inside a list item.
+                                           
+    <li class=m1>Rather than proper nesting of ULs within ULs you can use <b>m1</b> etc. to indent.
+    <li class=m2>As you'd expect <b>m2</b> gives another level and so on.
+    </ul>
+  </td>
+  <td>
+    <h6 class=hint><u>Hint</u>Use this when you want vertical organisation without any bullets etc.  A list of A tags in a menu for example.</h6>
+    <ul class="bare bgblu">
+    <li>This list is
+    <li>unordered
+    <li>nobis eleifend option congue assum. Typi non habent claritatem insitam; est usus legentis in
+    <li>yak yak yak yak yak yak yak yak yak yak yak yak yak yak yak 
+    </ul>
+    <h6 class=info><u>Backgrounds</u>The backgrounds have been added so you can see the full extent of each list's real-estate</h6>
+  </td>
+  <td>
+    <h6 class=hint><u>Hint</u>Use this when you want add ticks etc. to items. Set the tick type in each list item.</h6>
+    <ul class="ticks bggry shadow">
+    <li>The first couple of items
+    <li>in this list have default
+    <li class=t0>This item is <b>li=t0</b>
+    <li class=t1>This item is <b>li=t1</b>
+    <li class=b0>This item is <b>li=b0</b>
+    <li class=b1>This item is <b>li=b1</b>
+    </ul>
+    <h6 class=warn><u>Watch the names</u>These have different style/class names to the stand-alone ticks.<br><span class=tiny>There is a good reason for this</span></h6>
+  </td>
+  <td>
+    <ol class="dotted bggrn">
+    <li>This list is
+    <li>ordered.
+    <li>Nothing special to see except the <b>dotted</b> class has been added which is a bit of candy.
+    <li>nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum.
+    </ul>
+  </td>
+</tr></table>  
+<div class=foot>
+  <u>5</u>This is a sample footnote <b>div=foot</b> makes it happen with the number at the head
+  underlined <span class="code">&lt;div class=foot&gt;&lt;u&gt;5&lt;/u&gt; ... &lt;/div&gt;</span>
+</div>
+
+<h1>Columns</h1>
+<div class="col20 colRule">
+<h6 class="warn right"><u>IE disaster zone</u>Newspaper columns are not supported by IE yet.</h6>
+Narrower columns of text make for much easier reading. 
+Apply these classes to a &lt;div&gt; for the content within to be flowed across multiple columns.  
+There are two basic ways to define columns: Number or width.  I suggest using width most
+of the time.  The following classes are provided in the style sheet:<br>
+<ul class=bare>
+<li>Count : <b>col2</b>, <b>col3</b>, <b>col4</b><br>
+<li>Width : <b>col10</b>, <b>col15</b>, <b>col20</b>, <b>col25</b>
+<li>Rule  : <b>colRule</b>
+</ul>
+Narrower columns of text make for much easier reading. 
+Apply these classes to a &lt;div&gt; for the content within to be flowed across multiple columns.  
+There are two basic ways to define columns: Number or width.  I suggest using width most
+of the time.  The following classes are provided in the style sheet:<br>
+<ul class=bare>
+<li>Count : <b>col2</b>, <b>col3</b>, <b>col4</b><br>
+<li>Width : <b>col10</b>, <b>col15</b>, <b>col20</b>, <b>col25</b>
+<li>Rule  : <b>colRule</b>
+</ul>
+Narrower columns of text make for much easier reading. 
+Apply these classes to a &lt;div&gt; for the content within to be flowed across multiple columns.  
+There are two basic ways to define columns: Number or width.  I suggest using width most
+of the time.  The following classes are provided in the style sheet:<br>
+<ul class=bare>
+<li>Count : <b>col2</b>, <b>col3</b>, <b>col4</b><br>
+<li>Width : <b>col10</b>, <b>col15</b>, <b>col20</b>, <b>col25</b>
+<li>Rule  : <b>colRule</b>
+</ul>
+
+</div>
+
+
+
+<div class="w75 center frame1 round2 bggrn">
+  This framework was developed and put in the public domain by Peter Fox.
+  The web address is <a class=offSite href="http://vulpeculox.net/misc/style">vulpeculox.net/misc/style</a>. 
+</div>  
+</body>
+</html>
