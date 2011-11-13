@@ -1,9 +1,0 @@
-# We don't want these in the repository
-# (They are in the zip)
-*.gif
-*.cur
-*.otf
-index.htm
-Template.htm
-clubFoo.jpg
-
