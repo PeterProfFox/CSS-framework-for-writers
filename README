@@ -6,7 +6,8 @@ images with captions, tick-lists, columns, frequently used table styles
 and many more cute and useful things.
 
 The cheat sheet is at http://vulpeculox.net/misc/style showcases most
-features.  The documentation is also there.
+features.  The documentation is also there.  Download the complete 
+package from there or here with style.zip.  
 
 Benefits for readers:
 * Consistent use of elements for ease of interpretation
@@ -20,9 +21,17 @@ Benefits for writers:
 * Quick picking of complex styles
 * Make your point quickly with ready to use features 
 
-The reasons for GitHubbing are (1) my testing facilities are limited and
-(2) there are probably CSS tricks that could be used to improve the code.
+Key files in this repository:
+* style.zip ............ complete package to download and use
+* CheatSheet.png ....... picture of many features
+* CheatSheet.htm ....... view source to see how simple it is
+* PefStdDoc.css ........ What makes it all happen
+* Various gifs, curs ... Glyphs and custom cursors
+
+Why GitHub?
+(1) My testing facilities are limited.
+(2) There are probably CSS tricks that could be used to improve the code.
 Whilst dedicated programmers may do Gity things with repositories, there
-is another way to make improvements.  Simply email changes.
+is another way to make improvements.  Simply email changes or thoughts.
 
 Peter Fox  git@vulpeculox.net
