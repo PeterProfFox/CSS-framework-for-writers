@@ -1,0 +1,28 @@
+This a CSS framework for writers of manuals, tutorials and documentation
+that provides a lot of power and flexibility using ordinary HTML markup.
+It makes sense to use the 'language of the web' to produce documents and
+this makes it a lot easier for a writer to do clever things like box-outs,
+images with captions, tick-lists, columns, frequently used table styles
+and many more cute and useful things.
+
+The cheat sheet is at http://vulpeculox.net/misc/style showcases most
+features.  The documentation is also there.
+
+Benefits for readers:
+* Consistent use of elements for ease of interpretation
+* Easy formatting means better, easier to read layout
+* Rich formatting can give direction and clarity 
+
+Benefits for writers:
+* All your documents have a standard look and feel
+* Simplification of formatting and features
+* Easy formatting means better layout, clearer documents
+* Quick picking of complex styles
+* Make your point quickly with ready to use features 
+
+The reasons for GitHubbing are (1) my testing facilities are limited and
+(2) there are probably CSS tricks that could be used to improve the code.
+Whilst dedicated programmers may do Gity things with repositories, there
+is another way to make improvements.  Simply email changes.
+
+Peter Fox  git@vulpeculox.net
