@@ -1,24 +1,51 @@
-/* 11 Nov 11 : bug with frame2 and frame3 round lists fixed */
-/* 29 Oct 11 : pad, plr and ptb added */
+/*  7 Mar 13 : Tidy-up after validation
+ * 28 Feb 13 : column colours added c1xxx ...c9xxx 
+               column1 shading restricted to non-collspanned cells
+ * 26 Oct 12 : Heading auto-numbering added [autonum]
+               <pre> styled back to monospace and boxed
+ * 23 Sep 12 : sup and sub made to work nicely
+ * 15 May 12 : bold added.  cnb added.  td.top/mid/bot added
+ * 11 Nov 11 : bug with frame2 and frame3 round lists fixed 
+ * 29 Oct 11 : pad, plr and ptb added 
+ */
+
 
 /* WEB-FONTS */
 /* We need to be careful when using these as FF doesn't support printing with them */
 /* -weight and -style settings are needed by Chrome to fix bold bug                */
-@font-face { font-family:"ColabLig";  font-weight: normal; font-style: normal; src: url("ColabLig.otf") format("opentype");}  
-@font-face { font-family:"ColabMed"; src: url("ColabMed.otf") format("opentype");}  
-@font-face { font-family:"Chunk"; src: url("Chunkfive.otf") format("opentype");}  
-@font-face { font-family:"Garamond"; src: url("EBGaramond.otf") format("opentype");}  
+@font-face { font-family:"ColabLig"; 
+             font-weight: normal;
+             font-style: normal;
+             src: url('ColabLig.otf') format('opentype');}  
+@font-face { font-family:"ColabMed";
+             font-weight: normal;
+             font-style: normal;
+             src: url("ColabMed.otf") format("opentype");}  
+@font-face { font-family:"Chunk"; 
+             font-weight: normal;
+             font-style: normal;
+             src: url('Chunkfive.otf') format("opentype");}  
+@font-face { font-family:"Garamond";
+             font-weight: normal;
+             font-style: normal;
+             src: url("EBGaramond.otf") format("opentype");}  
 
 
 /* RESET */
 body, div, span, p, img, form, table, tbody, tfoot, thead, tr, th, td, iframe,
 h1, h2, h3, h4, h5, h6,  blockquote, pre, a, code, 
-dl, dt, dd, ol, ul, li, fieldset, applet,font, strike, strong, sub, sup, label, legend {
+dl, dt, dd, ol, ul, li, fieldset, applet,font, strike, strong, label, legend {
 	vertical-align: baseline;
 	font-family: inherit;	font-weight: inherit;	font-style: inherit; font-size: 100%;
   line-height: 1.1;
 	outline: 0;	padding: 0;	margin: 0;	border: 0;
 }
+/* These are customised with css because normally the layout engine will
+   allow extra line height which puts an unsightly gap in the text.  */
+sup {position:relative; top:-4px; vertical-align:top; font-size:80%;}
+sub {position:relative; bottom:-1px; vertical-align:bottom; font-size:80%;}
+
+
   
 /* BASICS */  
 body {
@@ -32,18 +59,20 @@ body {
   font-size:105%;
 }
 .serif {
-  font-family:Palatino,Times New Roman,Serif;
+  font-family:Palatino,"Times New Roman",Serif;
 }
  
   
 p {margin-top:1em;}
 div {margin-top:2px;} 
 
+
 /* TITLE AND HEADINGS */  
 @media screen {    /* fixed heading for navigation is not applicable to printing */
 body {
   background-color: #F7F4E1;
 }
+
 div.topMenu {                           
     position:fixed; top: 0;     /* This is a fixed navigation bar  */
     width:100%;                 /* suitable for dropping <a>s onto */
@@ -56,6 +85,7 @@ div.topMenu {
     z-index:10;
   }  
 }/* media */
+
   
 .newPage {page-break-before:always;}  /* only for printing */
   
@@ -108,7 +138,60 @@ h3 {
  font-size:120%;
  margin: 18px 0px 0px 0px;
 }
+h4 {
+ font-family:Chunk,Arial,Sans-serif;
+ padding-top:1px;
+ color: black;
+ font-size:100%;
+ margin: 18px 0px 0px 0px;
+}
 
+
+/* AUTOMATIC SECTION NUMBERING  */
+body{counter-reset: h1counter h2counter h3counter h4counter;}
+h1.autonum{counter-reset: h2counter h3counter h4counter;}
+h2.autonum{counter-reset: h3counter h4counter;}
+h3.autonum{counter-reset: h4counter;}
+h1.autonum:before,h2.autonum:before,h3.autonum:before,h4.autonum:before {
+  float:left;
+  clear:left;
+  margin:2px 4px 2px -30px;
+  padding:2px 4px;
+  width:35px;
+  -moz-border-radius: 0px 5px 5px 0px;
+  border-radius: 0px 5px 5px 0px;
+  border:2px outset #777;
+  border-left:0px;
+  background-color:#777;
+  color: white;
+  text-decoration:none;
+  font-family:ColabMed,Serif;
+  text-align:center;
+}
+h1.autonum:before {
+  counter-increment: h1counter;
+  content: counter(h1counter);
+  width:35px;
+  font-size:18px;
+}   
+h2.autonum:before {
+  counter-increment: h2counter;
+  content: counter(h1counter) "." counter(h2counter);   
+  width:35px;
+  font-size:13px;
+}
+h3.autonum:before {
+  counter-increment: h3counter;
+  content: counter(h1counter) "." counter(h2counter) "." counter(h3counter);
+  width:40px;
+  font-size:11px;
+}   
+h4.autonum:before {
+  counter-increment: h4counter;
+  content: counter(h1counter) "." counter(h2counter) "." counter(h3counter) "." counter(h4counter);
+  width:45px;
+  font-size:10px;
+}   
 
 
 /* GENERIC HIGHLIGHTING/COLOURS */
@@ -121,6 +204,10 @@ h3 {
   font-size:66% !important;
   font-family:inherited !important;
 }  
+.bold {
+  font-weight:bold;
+}  
+
 
 /* EMPHASIS AND TICKS */
 span.q {                            /* span class=q has quote marks added for decoration */
@@ -157,7 +244,7 @@ span.warn {
   min-height:18px;
   background-repeat:no-repeat;
   padding-left:18px;
-  background-position:0 -1;
+  background-position:0 -1px;
 }  
 
 .tick0 {background-image:url('tick0.gif');min-height:14px;background-repeat:no-repeat;padding-left:16px;background-position:0 0;}  
@@ -282,7 +369,7 @@ div.img>img {width:100%;margin-bottom:3px;}
 /* VERTICAL SHIMS AND CLEARFIX */
 p.vspace {
   height:50px;
-  clear:both:
+  clear:both;
 }  
 p.gap {height:10px;}
 div.floatFix:after,div.floatfix:after {   /* clearfix  renamed to be easier to remember when needed */
@@ -295,11 +382,11 @@ div.floatFix:after,div.floatfix:after {   /* clearfix  renamed to be easier to r
 
 /* BOX-OUT AND HORIZONTAL DIVISION */
 h6{
-  display:table;                /* <-key setting */
+  display:table;                /* <-key setting  */
   text-align:center;
   overflow:hidden;
   padding: 0px;
-  color:inherited;
+  color:inherit;
   -moz-border-radius: 7px !important; 
   border-radius: 7px !important;
   margin:3px;
@@ -310,8 +397,13 @@ h6>u {
   margin:0px;
   text-decoration:none;
   font-weight:bold;
-  letter-spacing:150%;
+  letter-spacing:1px;
 }
+
+
+
+
+
 h6.info{border:1px solid black;background-color:white;}
 h6.info>u{background-color:black;color:white;}
 h6.fact{border:1px solid blue;background-color:white;}
@@ -375,16 +467,17 @@ h1>u {
 
 /* LINKS */
 a.button {
-  margin : 0 5 0 0;
+  margin : 0 5px 0 0;
   padding: 0 3px;
   border : 1px outset #999;
   background-color : #eee;
-  white-space : nowrap;
+  white-space : pre;
   text-decoration : none;
   color : #08f;
   font-weight : normal;
   -moz-border-radius: 3px;
   border-radius: 3px;
+  cursor:pointer;
 }  
 a.button:hover {color: black;}  
 
@@ -394,8 +487,8 @@ a.link {
   margin : 0;
   background-image : none;
   border-style:none;
-  background-color : inherited;
-  white-space : wrap;
+  background-color : inherit;
+  white-space : nowrap;
   color : #08f;
   -moz-border-radius: 3px;
   border-radius: 3px;
@@ -413,8 +506,8 @@ a.glos {
   font-style:italic;
   border-style:none;
   color : #08f;
-  background-color : inherited;
-  white-space : wrap;
+  background-color : inherit;
+  white-space : nowrap;
 }  
 a.glos:after{
   content:"^";
@@ -436,6 +529,24 @@ a.foot {
   -moz-border-radius: 2px;
   border-radius: 2px;
 }
+
+a.pdf {
+  background-image:url('pdf.gif');
+  min-height:14px;
+  background-repeat:no-repeat;
+  padding-left:19px;
+  background-position:left top;
+}
+
+a.envelope {
+  background-image:url('envelope.gif');
+  min-height:14px;
+  background-repeat:no-repeat;
+  padding-left:24px;
+  background-position: 2px 2px;  
+  cursor: url("email.cur") 6 8, auto;
+}
+
 
 div.foot{
   padding-left:30px;
@@ -461,13 +572,14 @@ div.foot>u{
 
 
 /* CURSOR VARIANTS FOR USE WITH <A> */  
-.download { cursor: url("downloadHC.cur") 5 21, auto;}
+.download { cursor: url("downloadHC.cur") 5 21, auto !important;}
 .newWin { cursor: url("newWindowHC.cur") 5 1, auto;}
 .newWinOffSite { cursor: url("offSiteNewWindowHC.cur") 21 5, auto;}
 .offSite { cursor: url("offSiteHC.cur") 21 5, auto;}
 .video{ cursor: url("projector.cur") 10 8, auto;}
 .sound{ cursor: url("musicNote.cur") 4 14, auto;}
 .document{ cursor: url("document.cur") 6 8, auto;}
+.envelope{ cursor: url("email.cur") 6 8, auto;}
 
 /* UNCOPYABLE EMAIL *
    To use this the html is just <span class=email>@</span>
@@ -493,13 +605,16 @@ table {	border-collapse: collapse; border-spacing: 0;	}
 caption,th,td {	font-weight: normal;	text-align: left;	}
 
 /* justification td by td */
-td.centre,td.center{text-align:center;}
-td.left{text-align:left;}
-td.right{text-align:right;}
-td.full{text-align:justify;}
+th.centre,th.center,td.centre,td.center{text-align:center;}
+th.left,td.left{text-align:left;}
+th.right,td.right{text-align:right;}
+th.full,td.full{text-align:justify;}
 
-/* justification specified in table column by column */
-table.c1r td:first-child{text-align:right;}
+
+/* Justification and colours specified in table column by column 
+   Note that it is safe to colspan the first cell across the whole row
+*/
+table.c1r td:first-child:not([colspan]){text-align:right;}
 table.c2r td:nth-child(2){text-align:right;}
 table.c3r td:nth-child(3){text-align:right;}
 table.c4r td:nth-child(4){text-align:right;}
@@ -509,24 +624,99 @@ table.c7r td:nth-child(7){text-align:right;}
 table.c8r td:nth-child(8){text-align:right;}
 table.c9r td:nth-child(9){text-align:right;}
 
+/* bold specified in table column by column */
+table.c1b td:first-child:not([colspan]){font-weight:bold;}
+table.c2b td:nth-child(2){font-weight:bold;}
+table.c3b td:nth-child(3){font-weight:bold;}
+table.c4b td:nth-child(4){font-weight:bold;}
+table.c5b td:nth-child(5){font-weight:bold;}
+table.c6b td:nth-child(6){font-weight:bold;}
+table.c7b td:nth-child(7){font-weight:bold;}
+table.c8b td:nth-child(8){font-weight:bold;}
+table.c9b td:nth-child(9){font-weight:bold;}
+
+/* shade specified in table column by column */
+table.c1yel td:first-child:not([colspan]){background-color:#feb;}
+table.c2yel td:nth-child(2){background-color:#feb;}
+table.c3yel td:nth-child(3){background-color:#feb;}
+table.c4yel td:nth-child(4){background-color:#feb;}
+table.c5yel td:nth-child(5){background-color:#feb;}
+table.c6yel td:nth-child(6){background-color:#feb;}
+table.c7yel td:nth-child(7){background-color:#feb;}
+table.c8yel td:nth-child(8){background-color:#feb;}
+table.c9yel td:nth-child(9){background-color:#feb;}
+
+/* shade specified in table column by column */
+table.c1pnk td:first-child:not([colspan]){background-color:#fbb;}
+table.c2pnk td:nth-child(2){background-color:#fbb;}
+table.c3pnk td:nth-child(3){background-color:#fbb;}
+table.c4pnk td:nth-child(4){background-color:#fbb;}
+table.c5pnk td:nth-child(5){background-color:#fbb;}
+table.c6pnk td:nth-child(6){background-color:#fbb;}
+table.c7pnk td:nth-child(7){background-color:#fbb;}
+table.c8pnk td:nth-child(8){background-color:#fbb;}
+table.c9pnk td:nth-child(9){background-color:#fbb;}
+
+/* shade specified in table column by column */
+table.c1gry td:first-child:not([colspan]){background-color:#ddd;}
+table.c2gry td:nth-child(2){background-color:#ddd;}
+table.c3gry td:nth-child(3){background-color:#ddd;}
+table.c4gry td:nth-child(4){background-color:#ddd;}
+table.c5gry td:nth-child(5){background-color:#ddd;}
+table.c6gry td:nth-child(6){background-color:#ddd;}
+table.c7gry td:nth-child(7){background-color:#ddd;}
+table.c8gry td:nth-child(8){background-color:#ddd;}
+table.c9gry td:nth-child(9){background-color:#ddd;}
+
+/* shade specified in table column by column */
+table.c1blu td:first-child:not([colspan]){background-color:#dff5f5;}
+table.c2blu td:nth-child(2){background-color:#dff5f5;}
+table.c3blu td:nth-child(3){background-color:#dff5f5;}
+table.c4blu td:nth-child(4){background-color:#dff5f5;}
+table.c5blu td:nth-child(5){background-color:#dff5f5;}
+table.c6blu td:nth-child(6){background-color:#dff5f5;}
+table.c7blu td:nth-child(7){background-color:#dff5f5;}
+table.c8blu td:nth-child(8){background-color:#dff5f5;}
+table.c9blu td:nth-child(9){background-color:#dff5f5;}
+
+/* shade specified in table column by column */
+table.c1grn td:first-child:not([colspan]){background-color:#ceb;}
+table.c2grn td:nth-child(2){background-color:#ceb;}
+table.c3grn td:nth-child(3){background-color:#ceb;}
+table.c4grn td:nth-child(4){background-color:#ceb;}
+table.c5grn td:nth-child(5){background-color:#ceb;}
+table.c6grn td:nth-child(6){background-color:#ceb;}
+table.c7grn td:nth-child(7){background-color:#ceb;}
+table.c8grn td:nth-child(8){background-color:#ceb;}
+table.c9grn td:nth-child(9){background-color:#ceb;}
+
+
+
+/* vertical align in cells to replace valign= */
+.top {vertical-align:top;}
+.mid {vertical-align:middle;}
+.bot {vertical-align:bottom;}
+
+
+
 table.table {                    
   border: 1px none black;
   border-collapse:collapse;
   margin:4px 10px 4px 10px;
 }
-table.table  td, table.table  th {
+table.table td, table.table th {
   border: 1px solid black;
   padding:0px 4px 0px 4px;
   background-color:white;
 }
-table.titleR1 tr:first-child td{
+table.titleR1 tr:first-child td, th {
   font-size:120%;
   color:white;
   font-weight:bold;
   background-color:#399 !important;
   border:1px solid black !important;
 }
-table.shadeR1 tr:first-child td{ 
+table.shadeR1 tr:first-child td, th{ 
   font-weight : bold;
   background-color:#bcc !important;
 }
@@ -534,7 +724,7 @@ table.shadeR2 tr:nth-child(2) td{   /* used when we want to use the first row fo
   font-weight : bold;
   background-color:#bcc !important;
 }
-table.shadeC1 tr td:first-child {
+table.shadeC1 tr td:first-child:not([colspan]){
   background-color:#D5F5F5;
 }
 table.shadeLastC tr td:last-child {
@@ -561,6 +751,12 @@ td {
 /* IE 8 bug means we have to be verbose.  Should be td[colspan] */
 td[colspan*="0"],td[colspan*="2"],td[colspan*="3"],td[colspan*="4"],td[colspan*="5"],td[colspan*="6"],
 td[colspan*="7"],td[colspan*="8"],td[colspan*="9"],td[colspan*="11"]{text-align:center;}  
+
+
+
+  
+
+
 
 .hlines tr{
   background-color: #FEFBE8; 
@@ -602,6 +798,13 @@ tr.none>td {          /* remove lines and shades and colours */
 
 /* CODE */   
 /* (IE disaster area) */
+pre {
+  font-family:monospace;
+  background-color: #ddd;
+  border:1px inset white;
+  padding:1px 5px;
+}  
+  
 span.path {
   font-family:monospace;
   color:#490880;
@@ -612,7 +815,7 @@ span.code {
   white-space : pre;
   color:#800000;
   font-family:monospace;
-  font-size:95%;
+  font-size:85%;
   line-height:120%;
 }  
 span.tag:before{content:"<";}  /* use with span.code */
@@ -629,7 +832,7 @@ div.code {
   color:#800000;
   font-family:monospace;
   margin-top:3px;
-  font-size:95%;
+  font-size:85%;
   line-height:120%;
 }  
 div.code>span.note {
@@ -745,3 +948,4 @@ div.col25 {
   column-width:25em;
 }  
  
+

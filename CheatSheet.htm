@@ -3,10 +3,12 @@
 <head>
   <title>Cheat sheet for Peter's standard markup</title>
   <link href="PefStdDoc.css" rel="stylesheet" type="text/css">
+  <META name="description" content="CSS framework cheat sheet.">
+  <META name="keywords" content="CSS, framework, stylesheet, technical authoring, cheat sheet">
 </head>
 <body>
 <div class=topMenu>div=topMenu <a class=link href="#">a=link</a>
-<div class="boxout todo right w6">Updated:29 October 2011</div>
+<div class="boxout todo right w6">Updated:7 March 2012</div>
 <div class="boxout right w4">/misc/style/CheatSheet.htm</div>
 </div>
 <div class=title1><span class=tiny>div=title1</span>Cheat sheet for Peter's standard markup</div>
@@ -21,6 +23,7 @@
     <span class=q>span=q quote marks added automatically</span><br>
     <span class=emph>span=emph</span><br>
     <span class=name>span=name</span><br>
+    <span class=tiny>span=tiny</span><br>
     <span class="code">span=code </span> <span class=tiny> Also applies to div.  See Below.</span><br>
     <span class="path">span=path </span> <br>
     <span class="shadow">span=shadow </span> <span class=tiny> Also applies to other elements</span><br>
@@ -266,15 +269,23 @@ quod mazim placerat facer possim assum. Typi non habent claritatem
 <div class="frame1 round1 bgwhi">
   Class <b>table</b> gives white background and lines.
 </div>
-<table class="table shadeC1 titleR1 shadeR2 c2r c3r c4r shadeLastC right w3">
-<tr><td colspan=4>titleR1</td></tr>
-<tr><td><span class="arrowE">shadeR2</span></td><td>Jan</td><td>Feb</td><td><span class="arrowS">shadeLastC</span></td></tr>
-<tr><td><span class="arrowS">shadeC1</span></td><td>50</td><td>66</td><td>116</td></tr>
-<tr><td>Elephants</td><td>5</td><td>4</td><td>9</td></tr>
-<tr><td>Dogs</td><td>12</td><td>16</td><td>28</td></tr>
-<tr class=total><td>tr=total</td><td>67</td><td>86</td><td>153</td></tr>
-<tr class=none><td colspan=4 class=txl>Using <b>tr=none</b> on a row is handy for things like notes</td></tr>
-</table>
+<div class="right w3">
+  <table class="table shadeC1 titleR1 shadeR2 c2r c3r c4r shadeLastC">
+  <tr><td colspan=4>titleR1</td></tr>
+  <tr><td><span class="arrowE">shadeR2</span></td><td>Jan</td><td>Feb</td><td><span class="arrowS">shadeLastC</span></td></tr>
+  <tr><td><span class="arrowS">shadeC1</span></td><td>50</td><td>66</td><td>116</td></tr>
+  <tr><td>Elephants</td><td>5</td><td>4</td><td>9</td></tr>
+  <tr><td>Dogs</td><td>12</td><td>16</td><td>28</td></tr>
+  <tr class=total><td>tr=total</td><td>67</td><td>86</td><td>153</td></tr>
+  <tr class=none><td colspan=4 class=txl>Using <b>tr=none</b> on a row is handy for things like notes</td></tr>
+  </table>
+  
+  <table class="table titleR1 c1gry c2blu c3grn c4pnk c5yel">
+  <tr><td colspan=6>Column colours</td></tr>
+  <tr><td>c1gry</td><td>c2blu</td><td>c3grn</td><td>c4pnk</td><td>c5yel</td><td><i>Normal</i></td></tr>
+  </table>
+  
+</div>  
 <ul>
 <li>The table on the right has the styles<br>
  <b>table shadeC1 titleR1 shadeR2 c2r c3r c4r shadeLastC</b> right w3
@@ -284,7 +295,8 @@ quod mazim placerat facer possim assum. Typi non habent claritatem
 <li><div class="boxout w4 right">Without a title we would have used <b>shadeR1</b></div>
 <b>shadeR2</b> highlights the column headings in the second row.
 <li class="frame1 bggrn w3"><b>c<span class="red f110">n</span>r</b> indicates the
-    specified column should be right justified.
+    specified column should be right justified. <b>c<span class="red f110">n</span><i>colour</i></b> indicates the
+    specified column should be shaded.
 <li class="frame1 bgpnk w3"><b>c<span class="red f110">n</span>r</b> and <b>shadeR2</b>
     and <b>shadeLastC</b> don't work in IE&lt;9. You have to style each TD by hand :(             
 <li>Other common styles applied to TABLE <b>w</b><i>n</i>, <b>left</b> and <b>right</b>
@@ -327,6 +339,7 @@ quod mazim placerat facer possim assum. Typi non habent claritatem
       
 <p class="newPage">
 <h1>Code documentation</h1>
+<pre>You can use &lt;pre&gt; without any class for this monospace box</pre>
 <div class="boxOut right w3">
 <b>span=slashes</b> is used where you'd have 'double slashes' in code.<p>
 <b>span=note</b> inserts commentary notes.</div>
@@ -429,9 +442,15 @@ of the time.  The following classes are provided in the style sheet:<br>
 </ul>
 
 </div>
+<h1 class=autonum>Automatic numbering</h1>
+<h2 class=autonum>Goes down to</h2>
+<h3 class=autonum>the h4 level</h3>
+<h3 class=autonum>like this</h3>
+<h4 class=autonum>and like this</h4>
+<h2 class=autonum>using class <span class=black><i>H<span class="red"><i>n</i></span>=autonum</i></span></h2> 
+<h1 class=autonum>Automatic numbering</h1>
 
-
-
+<hr>
 <div class="w75 center frame1 round2 bggrn">
   This framework was developed and put in the public domain by Peter Fox.
   The web address is <a class=offSite href="http://vulpeculox.net/misc/style">vulpeculox.net/misc/style</a>. 

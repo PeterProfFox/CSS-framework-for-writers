@@ -149,12 +149,12 @@
   in HTML can sometimes be mind-bogglingly confusing.
   <ul class="ticks m2">
   <li>A good general purpose text editor or possibly one specificaly for HTML and CSS. 
-  <li>Some book marks to HTML basics and CSS basics
+  <li>Some bookmarks to HTML basics and CSS basics
   </ul>
   </div>
   </h6>
 
-<!-- -----------------------------------------------------------------------------------
+<!-- 
                  .oooooo.                   .o8   o8o                         
                 d8P'  `Y8b                 "888   `"'                         
                888           .ooooo.   .oooo888  oooo  ooo. .oo.    .oooooooo 
@@ -164,7 +164,7 @@
                 `Y8bood8P'  `Y8bod8P' `Y8bod88P" o888o o888o o888o `8oooooo.  
                                                                    d"     YD  
                                                                    "Y88888P'  
-------------------------------------------------------------------------------------- -->
+-->
   
 <a name="coding"></a><h1><u>3</u>Coding HTML</h1>
 Firstly have a look at the <span class=emph>cheat sheet</span> to get a feel for what can be done. 
@@ -242,7 +242,7 @@ After that anything can happen.
  a 'new line' but you may need to add <b>clear</b> to <span class="tag code">H3</span> if you've got floating bits before it. 
  <div class="boxOut wall">
     Start the heading text with something underlined to have it
-    appear as a section number in the left margin.</div>  
+    appear as a section number in the left margin. <span class="red">Or use <b>class=autonum</b> for automatic numbering.</span> </div>  
 <li><span class="tag code">div class=boxOut</span> with various combinations of <b>left</b>, <b>right</b>, <b>w4</b> and <b>w5</b>
  is a really handy way to encapsulate a nugget.  It is just a <span class="tag code">DIV</span>
  with fancy formatting. 
@@ -319,7 +319,7 @@ Have a look at the H6 section of the cheat sheet.  There are two important point
   </h6>
   
   
-<!-- TABLES --------------------------------------------------------------------- -->
+<!-- TABLES -->
 <a name="c-tables"></a><h2><u>3.3</u>Tables for layout and presentation</h2>
 <h3><u>3.3.1</u>Good reasons for splitting page into columns</h3>
 <h6 class="right info w4">
@@ -495,7 +495,8 @@ the <b>table</b> class.  That will get you started.
 Adding class <b>table</b> to <span class="tag code">TABLE</span> gives a bare white grid.
 The default alignment of text in cells is to the left but you can override this by specifying
 columns to justify right - typically for figures - with <b>c</b><i>-column number-</i><b>r</b>.
-For example <b>c4r</b> will right justify the fourth column.
+For example <b>c4r</b> will right justify the fourth column.  Similarly background shading can 
+be added using <b>gry	blu	grn	pnk</b> and <b>yel</b>.  eg <b>c3grn</b>
 <p>
 Classes <b>total</b> and <b>none</b> can be added to the <span class="code tag">TR</span> tag.
 In the cheat sheet the comment at the bottom of the table is actually a blanked-out row.
@@ -585,7 +586,7 @@ two <span class="code tag">SPAN</span>s that work inside a code div.
 </div>
 
 
-<!-- -----------------------------------------------------------------------------------
+<!-- 
 ooooooooooooo                     oooo                     o8o                      oooo   o8o      .    o8o                     
 8'   888   `8                     `888                     `"'                      `888   `"'    .o8    `"'                     
      888       .ooooo.   .ooooo.   888 .oo.   ooo. .oo.   oooo   .ooooo.   .oooo.    888  oooo  .o888oo oooo   .ooooo.   .oooo.o 
@@ -593,7 +594,7 @@ ooooooooooooo                     oooo                     o8o                  
      888      888ooo888 888        888   888   888   888   888  888        .oP"888   888   888    888    888  888ooo888 `"Y88b.  
      888      888    .o 888   .o8  888   888   888   888   888  888   .o8 d8(  888   888   888    888 .  888  888    .o o.  )88b 
     o888o     `Y8bod8P' `Y8bod8P' o888o o888o o888o o888o o888o `Y8bod8P' `Y888""8o o888o o888o   "888" o888o `Y8bod8P' 8""888P' 
-------------------------------------------------------------------------------------- -->
+ -->
 <a name="technicalities"></a><h1><u>4</u>Technicalities</h1>
 <a name="t-printing"></a><h2><u>4.1</u>Printing</h2>
 <h6 class="warn w4 left"><u>Zone of fail</u>Browsers vary from appalling to not very good &mdash;
@@ -658,7 +659,7 @@ or a <span class="code tag">DIV</span>.
 </td></tr></table>
 
 
-<!-- -------------------------------------------------------------------------
+<!-- 
            .oooooo..o     .               oooo            
           d8P'    `Y8   .o8               `888            
           Y88bo.      .o888oo oooo    ooo  888   .ooooo.  
@@ -668,7 +669,7 @@ or a <span class="code tag">DIV</span>.
           8""88888P'    "888"     .8'     o888o `Y8bod8P' 
                               .o..P'                      
                               `Y8P'                       
----------------------------------------------------------------------------- -->                                              
+ -->                                              
 <a name="style"></a><h1><u>5</u>Authoring and style</h1>
 <div class=fixFloat>
     <a name="s-different"></a><h2><u>5.1</u>HTML is different</h2>
@@ -710,14 +711,15 @@ or a <span class="code tag">DIV</span>.
     <li>Boxouts <b>boxOut</b>, <b><span class="red">h6</span> fact info hint warn dont</b>
     <li>Code block <b><span class="red">div</span> code</b> <i>Inside span=<b>note</b> and span=<b>slashes</b></i>
     <li>Colours - foreground <b>red green blue black white</b> 
-    <li>Colours - background <b>invert bgpnk bggrn bgblu bggry</b> 
+    <li>Colours - background <b>invert bgpnk bggrn bgblu bggry bgyel bgwhi</b> 
+    <li>Colours - columns <b>c1</b> ... <b>c9</b> followed by <b>pnk grn blu gry yel</b> eg <b>c4yel</b>
     <li>Columns <b><span class="red">table</span> c1r c2r </b> ... <b>c9r shadeC1 shadeLastC</b>
     <li>Cursors for links <b><span class="red">a</span> download newWin newWinOffSite offSite video sound document</b>
     <li>Email address <b><span class="red">&lt;span class=email&gt;@&lt;span&gt;</span></b> <i>Details need tweaking in CSS</i>
     <li>Emphasis <b>todo tiny pin blob</b>
     <li>Font sizes <b>f80 f90 f100 f110 f120 f150 f200 f300</b>
     <li>Floating <b><span class="red">div</span> hardLeft left right centre center down floatfix clear</b>
-    <li>Headings <b>H1</b> ... <b>H3</b> <i>Underline section references</i>
+    <li>Headings <span class="red"><b>H1</b> ... <b>H4</b></span> <b>autonum</b> or <i>Underline section references</i>
     <li>Links <b><span class="red">a</span> link button foot glos</b>
     <li>Lists <b><span class="red">ul</span> bare ticks title dotted</b>
     <li>List items <b><span class="red">li</span> t0 t1 b0 b1</b>
@@ -741,7 +743,7 @@ or a <span class="code tag">DIV</span>.
   If you find it useful, find a bug, have some changes you'd like to share then let him know at <span class=email>@</span>
 </div>
 <p>
-<span class="f90 green">This version dated 5th September 2011</span>
+<span class="f90 green">This version dated 28th February 2013</span>
 
 
 </body>
